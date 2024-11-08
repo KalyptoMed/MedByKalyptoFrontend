@@ -36,7 +36,7 @@ export default function page() {
           </ul>
         </div>
       </div>
-      <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl bg-white input type=text placeholder:Antibiotics">
+      <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl  bg-white input type=text placeholder:Antibiotics">
         <Image
           src="/assets/Images/Icon (1).png"
           alt="Icon"
