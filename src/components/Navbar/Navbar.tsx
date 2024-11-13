@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-[#CFFC51] flex justify-between items-center my-2 md:my-5 mx-1 md:mx-4 px-2 md:px-10 py-3 rounded-xl text-center">
+    <div className="bg-[#fcfcfc] flex justify-between items-center mx-1 md:mx-4 px-2 md:px-10 py-3 rounded-xl text-center">
       <div>
         <Image
           src="/assets/images/logo_no bg 1.png"
@@ -47,13 +47,13 @@ export default function Navbar() {
           1
         </h4>
       </div>
-      <div className="md:hidden flex items-center">
+      <div className="md:hidden flex items-center mr-3">
         <button onClick={toggleMenu} className="text-[#0038FF] hover:text-[#071443]">
           {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </div>
       {isOpen && (
-        <div className="absolute top-20 left-0 w-full bg-[#CFFC51] flex flex-col items-center md:hidden">
+        <div className="absolute top-20 left-0 w-full bg-[#fcfcfc] flex flex-col items-center md:hidden">
           <ul className="flex flex-col items-center w-full font-medium text-lg">
             <li className="text-[#0B438D] hover:text-[#0038FF] py-2">
               <a href="/">Home</a>
