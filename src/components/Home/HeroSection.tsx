@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="flex flex-col md:flex-row p-10">
         <div className="flex flex-col w-full md:w-2/4">
           <div className="h-auto flex flex-col font-sans">
-            <h4 className="text-white text-6xl font-light mt-10 font-sans">
+            <h4 className="text-white text-5xl md:text-6xl font-light mt-10 font-sans">
               Distribution and Delivery of drugs made easy with{" "}
               <strong className="text-[#CFFC51]  text-7xl font-extrabold italic">
                 Medicart

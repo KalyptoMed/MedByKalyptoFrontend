@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-[#fcfcfc] flex justify-between items-center mx-1 md:mx-4 px-2 md:px-10 py-3 rounded-xl text-center">
+    <div className="bg-[#fcfcfc] flex justify-between items-center mx-1 md:mx-4 px-2 md:px-10 py-3 rounded-xl text-center ">
       <div>
         <Image
           src="/assets/images/logo_no bg 1.png"
@@ -53,7 +53,7 @@ export default function Navbar() {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute top-20 left-0 w-full bg-[#fcfcfc] flex flex-col items-center md:hidden">
+        <div className="absolute top-20 left-0 w-full pb-6 bg-[#fcfcfc] flex flex-col items-center md:hidden">
           <ul className="flex flex-col items-center w-full font-medium text-lg">
             <li className="text-[#0B438D] hover:text-[#0038FF] py-2">
               <a href="/">Home</a>
