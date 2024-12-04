@@ -7,7 +7,7 @@ export default function page() {
       <div className="grid">
         {/* logo */}
         <div className="flex bg-white m-6 pt-4 py-1 rounded-lg">
-          <div className="text-5xl ml-8">
+          <div className="text-5xl ml-6">
             <Image
               src="/assets/images/logo_no bg 1.png"
               alt="logo"
@@ -79,23 +79,22 @@ export default function page() {
             height={30}
           />
           <div className="absolute inset-0 flex flex-row items-center justify-around">
-            <div className="text-white font-sans ml-2 pr-20 align-center flex">
-              <h1 className="text-[40px] leading-[40px] font-semibold italic text-center">
-                LET&apos;S SKIP TO THE
-                <br />
-                &nbsp; HEALTHY PART
-              </h1>
+            <div className="text-white font-sans ml-2 pr-56 align-center flex">
+              <div className="text-[40px] leading-[40px] font-semibold italic text-center">
+                <h1>LET&apos;S SKIP TO THE</h1>
+                <h1>HEALTHY PART</h1> 
+              </div>
             </div>
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/assets/Images/shopping.png"
                 alt="shopping"
-                width={250}
+                width={260}
                 height={300}
               />
             </div>
             <div className="text-white flex flex-col justify-end items-center relative">
-              <div>
+              <div className="font-semibold">
                 <h4>ORDER ONLINE</h4>
                 <h4>PICKUP AT NEAREST LOCATION</h4>
                 <h4>OR TO YOUR DOORSTEP</h4>
@@ -106,26 +105,8 @@ export default function page() {
                  alt="Vector 5" 
                  width={60}
                  height={20}
-                 className="absolute top-0 left-10 transform -translate-x-full -translate-y-1/2" 
+                 className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2" 
                />
-              
-              {/* <p className="text-[20px] leading-[18px] font-semibold mt-4 relative">
-              <span className="relative">
-               <Image 
-                 src="/assets/Images/Vector 5 (1).png" 
-                 alt="Vector 5" 
-                 width={60}
-                 height={20}
-                 className="absolute top-0 left-0 transform -translate-x-full -translate-y-1/2" 
-               />
-                ORDER ONLINE&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <br /> PICKUP AT NEAREST LOCATION
-                <br />
-                OR TO YOUR DOORSTEP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;
-              </span>
-              </p> */}
             </div>
           </div>
         </div>
@@ -166,15 +147,15 @@ export default function page() {
       <div className="ml-2 mr-2">
         <div className="ml-2">
         <div className="h-12 w-auto ml-10 flex items-center font-light">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#AABE43] px-4 py-2 rounded-full whitespace-nowrap">
+          <p className="text-center text-xs text-[#fff] bg-[#AABE43] px-4 py-2 rounded-full whitespace-nowrap">
             ANTIBIOTICS
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -196,7 +177,7 @@ export default function page() {
                 alt='rate' 
                 width={20} 
                 height={4} 
-                className="font-thin"
+                // className="font-thin"
               />
 
               <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
@@ -215,17 +196,17 @@ export default function page() {
            </div>
            </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-DIARRHOEAL
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -235,12 +216,11 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             COLOSEAL CAPS
-            <br />
-            Loperamide 2mg caps(10x10)
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Loperamide 2mg caps(10x10)</span>
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -266,17 +246,17 @@ export default function page() {
            </div>
            </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10 ">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTACIDS/ANTI-ULCER
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -286,12 +266,11 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             OMEZOLE 20
-            <br />
-            Omeprazole 20mg caps(4x7)
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Omeprazole 20mg caps(4x7)</span> 
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -317,17 +296,17 @@ export default function page() {
            </div>
            </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-DIABETICS
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -337,12 +316,11 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             DIABETMIN 500
-            <br />
-            Metformin 500mg taps(5x20)
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Metformin 500mg taps(5x20)</span>
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -368,17 +346,17 @@ export default function page() {
            </div>
             </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             NON-STEROIDAL ANTI-INFLAMATORIES
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -388,14 +366,12 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             CLOFENAC SR
-            <br />
-            Diclofenac Sodium 100mg tap
-            <br />
-            10x10
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Diclofenac Sodium 100mg tap</span>
+            <span className="block">(10x10)</span>
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -421,17 +397,17 @@ export default function page() {
            </div>
            </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-MALARIA
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -441,14 +417,12 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             LUTER 80/480
-            <br />
-            Artemether 80mg + Lumefantrine 
-            <br />
-            480mg(1x6)
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Artemether 80mg + Lumefantrine </span>
+            <span className="block">480mg(1x6)</span>
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -474,17 +448,17 @@ export default function page() {
            </div>
             </div>
 
-           <div className="ml-2">
-           <div className="h-12 w-auto ml-10 flex items-center">
-          <p className="mt-7 text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
+           <div className="ml-2 mt-14">
+           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             VITAMINS/HEALTH SUPPLEMENTS
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-around ml-2">
+        <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
-        <div key={index} className="relative my-20">
-        <div className="mt-2 flex flex-col">
+        <div key={index} className="relative my-2">
+        <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
@@ -494,14 +468,12 @@ export default function page() {
            </div>
            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
-            <p className="text-left text-xs">
+            <h5 className="text-left text-xs sm:text-xs w-6/10">
             BETATONE
-            <br />
-            Potent Multivitamin, minerals soft
-            <br />
-            gel caps 30&apos;s
-            </p>
-            <p className="text-right text-xs">N2,000</p>
+            <span className="block">Potent Multivitamin, minerals soft</span>
+            <span className="block">gel caps 30&apos;s</span>
+            </h5>
+            <p className="text-right text-xs w-4/10">N2,000</p>
            </div>
            <div className="flex flex-row justify-between">
               <Image
@@ -527,72 +499,61 @@ export default function page() {
            </div>
             </div>
 
-           
-
-
-
-      <div className="mt-4 w-64 h-12 flex items-center justify-center">
-          <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
-          ANTACIDS/ANTI-ULCER
-          </h6>
-        </div>
-
-
       </div>
 
       {/* Footer */}
-      <div className="flex flex-row justify-around text-white">
-        <div className="ml-2">
-        <div className="flex flex-col mt-40">
-          <h2 className="font-extrabold text-white m-3"> 
+      <div className=" ml-6 mt-14 flex flex-row justify-between text-white">
+        <div className="ml-5 mt-10">
+        <div className="flex flex-col mt-36">
+          <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]"> 
             Contact Us 
           </h2>
-        <p className="flex flex-row text-white m-2 p-1"> 
+        <p className="flex flex-row text-white mb-1"> 
           <Image 
             src="/assets/Images/phone.png"
             alt="phone" 
-            width={10} 
+            width={20} 
             height={10} 
           />
-            +2348144440000 
+          <span className="ml-2">+2348144440000</span>
         </p>
-        <p className="flex flex-row text-white m-2 p-1">
+        <p className="flex flex-row text-white mt-1 p-1">
         <Image 
           src="/assets/Images/email.png" 
           alt="email" 
-          width={15} 
+          width={25} 
           height={15} 
         />
-         Medicartbykalypto@Gmail.Com
+        <span className="ml-2">Medicartbykalypto@Gmail.Com</span>
         </p>
-        <div className="flex flex-row bg-white rounded-full items-center justify-center px-2 m-2 w-28">
-          <Image src="/assets/Images/WhatsApp.png" alt="WhatsApp" width={20} height={20} />
-          <Image src="/assets/Images/Instagram.png" alt="Instagram" width={20} height={20} />
-          <Image src="/assets/Images/FB.png" alt="FB" width={20} height={20} />
-          <Image src="/assets/Images/X.png" alt="X" width={20} height={20} />
+        <div className="flex flex-row bg-white rounded-full items-center justify-center px-3 mt-2 w-28">
+          <Image src="/assets/Images/WhatsApp.png" alt="WhatsApp" width={25} height={20} />
+          <Image src="/assets/Images/Instagram.png" alt="Instagram" width={25} height={20} />
+          <Image src="/assets/Images/FB.png" alt="FB" width={25} height={20} />
+          <Image src="/assets/Images/X.png" alt="X" width={25} height={20} />
         </div>
         </div>
         </div>
 
-        <div className="flex flex-col mt-36">
-          <h2 className="font-extrabold m-3">
+        <div className="flex flex-col mt-40">
+          <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]">
             Navigation
           </h2>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Solution 
           </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Products </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Resources </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Pricing </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             More </p>
         </div>
 
-      <div className="flex flex-col items-center">
-        <div className="mt-28 bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
+      <div className="flex flex-col items-center mr-8">
+        <div className="mt-32 bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
         <Image 
           src="/assets/Images/logo_no bg 1.png" 
           alt="logo" 
@@ -601,7 +562,7 @@ export default function page() {
         />
         </div>
         <div className="mt-4 w-full max-w-md">
-          <h2 className="mt-6 font-bold">
+          <h2 className="mt-6 font-bold m-5 text-[20px] leading-[30px]">
             Sign Up For New Products
           </h2>
           </div>
