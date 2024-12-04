@@ -7,7 +7,7 @@ export default function page() {
       <div className="grid">
         {/* logo */}
         <div className="flex bg-white m-6 pt-4 py-1 rounded-lg">
-          <div className="text-5xl ml-8">
+          <div className="text-5xl ml-6">
             <Image
               src="/assets/images/logo_no bg 1.png"
               alt="logo"
@@ -190,51 +190,51 @@ export default function page() {
           <h2 className="font-extrabold text-white m-3"> 
             Contact Us 
           </h2>
-        <p className="flex flex-row text-white m-2 p-1"> 
+        <p className="flex flex-row text-white mb-1"> 
           <Image 
             src="/assets/Images/phone.png"
             alt="phone" 
-            width={10} 
+            width={20} 
             height={10} 
           />
-            +2348144440000 
+          <span className="ml-2">+2348144440000</span>
         </p>
-        <p className="flex flex-row text-white m-2 p-1">
+        <p className="flex flex-row text-white mt-1 p-1">
         <Image 
           src="/assets/Images/email.png" 
           alt="email" 
-          width={15} 
+          width={25} 
           height={15} 
         />
-         Medicartbykalypto@Gmail.Com
+        <span className="ml-2">Medicartbykalypto@Gmail.Com</span>
         </p>
-        <div className="flex flex-row bg-white rounded-full items-center justify-center px-2 m-2 w-28">
-          <Image src="/assets/Images/WhatsApp.png" alt="WhatsApp" width={20} height={20} />
-          <Image src="/assets/Images/Instagram.png" alt="Instagram" width={20} height={20} />
-          <Image src="/assets/Images/FB.png" alt="FB" width={20} height={20} />
-          <Image src="/assets/Images/X.png" alt="X" width={20} height={20} />
+        <div className="flex flex-row bg-white rounded-full items-center justify-center px-3 mt-2 w-28">
+          <Image src="/assets/Images/WhatsApp.png" alt="WhatsApp" width={25} height={20} />
+          <Image src="/assets/Images/Instagram.png" alt="Instagram" width={25} height={20} />
+          <Image src="/assets/Images/FB.png" alt="FB" width={25} height={20} />
+          <Image src="/assets/Images/X.png" alt="X" width={25} height={20} />
         </div>
         </div>
 
-        <div className="flex flex-col mt-36">
-          <h2 className="font-extrabold m-3">
+        <div className="flex flex-col mt-40">
+          <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]">
             Navigation
           </h2>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Solution 
           </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Products </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Resources </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             Pricing </p>
-          <p className="flex flex-col items-center">
+          <p className="flex flex-col items-center font-medium">
             More </p>
         </div>
 
-      <div className="flex flex-col items-center">
-        <div className="mt-28 bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
+      <div className="flex flex-col items-center mr-8">
+        <div className="mt-32 bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
         <Image 
           src="/assets/Images/logo_no bg 1.png" 
           alt="logo" 
@@ -243,7 +243,7 @@ export default function page() {
         />
         </div>
         <div className="mt-4 w-full max-w-md">
-          <h2 className="mt-6 font-bold">
+          <h2 className="mt-6 font-bold m-5 text-[20px] leading-[30px]">
             Sign Up For New Products
           </h2>
           </div>
