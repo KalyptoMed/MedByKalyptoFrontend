@@ -28,7 +28,7 @@ export default function Navbar() {
             <a href="/">Home</a>
           </li>
           <li className="text-[#0B438D] hover:text-[#0038FF]">
-            <a href="/product">Product</a>
+            <a href="/productlisting">Product</a>
           </li>
           <li className="text-[#0B438D] hover:text-[#0038FF]">
             <a href="/solutions">Solutions</a>
