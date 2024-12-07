@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function page() {
   return (
     <div className="h-screen-full bg-[#0038FF] flex flex-col relative">
-      <div className="grid">
+      {/* <div className="grid"> */}
         {/* logo */}
         <div className="flex bg-white m-6 pt-4 py-1 rounded-lg">
           <div className="text-5xl ml-6">
@@ -43,7 +43,7 @@ export default function page() {
             </button>
           </div>
         </div>
-{/* searchBar */}
+          {/* searchBar */}
         <div className="flex justify-between ml-12 mr-96 px-32 mt-8 py-2 bg-white border rounded-full">
           <div className="flex items-center w-full mr-1">
             <Image
@@ -70,15 +70,15 @@ export default function page() {
             />
           </button>
         </div>
-{/* ShoppingBar */}
-        <div className="relative m-12">
+          {/* ShoppingBar */}
+        {/* <div className="relative m-12">
           <Image
             src="/assets/Images/Rectangle.png"
             alt="Rectangle"
             width={1300}
             height={30}
-          />
-          <div className="absolute inset-0 flex flex-row items-center justify-around">
+          /> */}
+          {/* <div className="absolute inset-0 flex flex-row items-center justify-around"> */}
             <div className="text-white font-sans ml-2 pr-56 align-center flex">
               <div className="text-[40px] leading-[40px] font-semibold italic text-center">
                 <h1>LET&apos;S SKIP TO THE</h1>
@@ -107,8 +107,8 @@ export default function page() {
                  height={20}
                  className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2" 
                />
-      </div>
-      <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl  bg-white input type=text placeholder:Antibiotics">
+            </div>
+            <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl  bg-white input type=text placeholder:Antibiotics">
         <Image
           src="/assets/Images/Icon (1).png"
           alt="Icon"
@@ -124,20 +124,13 @@ export default function page() {
             height={20}
           />
         </button>
-      </div>
-      <br />
-      <br />
-
-      {/* <div className='order'>
-                <p>LET'S SKIP TO THE HEALTHY PART</p>
-                <img src='' /> ********
-                <p>ORDER ONLINE PICKUP AT NEAREST LOCATION OR TO YOUR DOORSTEP</p>
             </div>
-          </div>
-        </div>
-      </div>
-      {/* From Trending Products to See all Products */}
-<div className="ml-2">
+            <br />
+             <br />
+
+   
+          {/* From Trending Products to See all Products */}
+            <div className="ml-2">
   <div className="flex justify-between items-center text-white font-extrabold ml-11">
     <div className="flex flex-col">
       <h1 className="text-[32px] leading-[32px]">
@@ -166,18 +159,18 @@ export default function page() {
       />
     </div>
   </div>
-</div>
+            </div>
 
       {/* For the drugs */}
-      <div className="ml-2 mr-2">
-        <div className="ml-2">
-        <div className="h-12 w-auto ml-10 flex items-center font-light">
+            <div className="ml-2 mr-2">
+          <div className="ml-2">
+          <div className="h-12 w-auto ml-10 flex items-center font-light">
           <p className="text-center text-xs text-[#fff] bg-[#AABE43] px-4 py-2 rounded-full whitespace-nowrap">
             ANTIBIOTICS
           </p>
-        </div>
+          </div>
 
-        <div className="flex flex-wrap justify-around ml-2 mt-1">
+           <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
         <div key={index} className="relative my-2">
         <div className="flex flex-col">
@@ -219,35 +212,35 @@ export default function page() {
            </div>
            ))}
            </div>
-           </div>
+          </div>
 
-           <div className="ml-2 mt-14">
-           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+          <div className="ml-2 mt-14">
+            <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
           <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-DIARRHOEAL
           </p>
-        </div>
+            </div>
 
-        <div className="flex flex-wrap justify-around ml-2 mt-1">
+            <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
         <div key={index} className="relative my-2">
-        <div className="flex flex-col">
+            <div className="flex flex-col">
         <Image
                 src="/assets/Images/Drug.png"
                 alt="Drug"
                 width={250}
                 height={100}
               />
-           </div>
-           <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
+            </div>
+            <div className="absolute bg-white bottom-[-56px] w-[250px] p-3 rounded-t-2xl">
             <div className="flex flex-row justify-between">
             <h5 className="text-left text-xs sm:text-xs w-6/10">
             COLOSEAL CAPS
             <span className="block">Loperamide 2mg caps(10x10)</span>
             </h5>
             <p className="text-right text-xs w-4/10">N2,000</p>
-           </div>
-           <div className="flex flex-row justify-between">
+            </div>
+            <div className="flex flex-row justify-between">
               <Image
                 src='/assets/Images/rate.png' 
                 alt='rate' 
@@ -264,12 +257,14 @@ export default function page() {
               /> 
               <p className="text-xs ml-1">Add</p>
               </button>
-          </div>
+            </div>
+            </div>
         </div>
-      </div>
+        ))}
+
       {/* From Trending Products to Vitamins */}
-      <div className="m-4">
-      <div className="flex text-white font-extrabold ml-12 items-center flex-row">
+          <div className="m-4">
+        <div className="flex text-white font-extrabold ml-12 items-center flex-row">
         <h1 className="text-[28px] leading-[28px]">
           Trending Products
           <br />
@@ -280,14 +275,14 @@ export default function page() {
           alt="love"
           width={50}
           height={30}
-          className="mt-5 mr-2"
-        />
-      </div>
-      <div className="text-[#CFFC51] text-right mr-20 ">
-        <p className="">See all products --&gt;</p>
-      </div>
-      {/* For the drugs */}
-      <div className="ml-12">
+          className="mt-5 mr-2" />
+        </div>
+        <div className="text-[#CFFC51] text-right mr-20 ">
+          <p className="">See all products --&gt;</p>
+        </div>
+
+        {/* For the drugs */}
+        <div className="ml-12">
         <div className="rounded-full w-64 h-12 flex items-center justify-center">
           <h4 className="mt-4 text-center text-xs text-[#fff] bg-[#AABE43] px-4 rounded-full">
             ANTIBIOTICS
@@ -322,8 +317,7 @@ export default function page() {
           </h6>
         </div>
         <div className="mt-12 flex flex-row space-x-10 justify-around">
-          {[...Array(5)].map((_, index) => (
-            <div key={index} className="relative flex flex-col items-center">
+            <div className="relative flex flex-col items-center">
               <Image
                 src="/assets/Images/Drug2.png"
                 alt="Drug2"
@@ -342,13 +336,14 @@ export default function page() {
                 </p>
               </div>
             </div>
-           </div>
-           </div>
-           ))}
-           </div>
-           </div>
+        </div>
+        </div>
+           
+          </div>
 
-           <div className="ml-2 mt-14">
+            </div>
+
+            <div className="ml-2 mt-14">
            <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10 ">
           <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTACIDS/ANTI-ULCER
@@ -396,9 +391,9 @@ export default function page() {
            </div>
            ))}
            </div>
-           </div>
+            </div>
 
-           <div className="ml-2 mt-14">
+            <div className="ml-2 mt-14">
            <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
           <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-DIABETICS
@@ -448,7 +443,7 @@ export default function page() {
            </div>
             </div>
 
-           <div className="ml-2 mt-14">
+            <div className="ml-2 mt-14">
            <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
           <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             NON-STEROIDAL ANTI-INFLAMATORIES
@@ -497,16 +492,17 @@ export default function page() {
            </div>
            ))}
            </div>
-           </div>
+            </div>
 
-           <div className="ml-2 mt-14">
-           <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
+            <div className="ml-2 mt-14">
+
+            <div className="h-32 w-auto ml-10 flex items-center font-light -mb-10">
           <p className="text-center text-xs text-[#fff] bg-[#6180EF] px-4 py-2 rounded-full whitespace-nowrap">
             ANTI-MALARIA
           </p>
-        </div>
+            </div>
 
-        <div className="flex flex-wrap justify-around ml-2 mt-1">
+            <div className="flex flex-wrap justify-around ml-2 mt-1">
         {[...Array(5)].map((_, index) => (
         <div key={index} className="relative my-2">
         <div className="flex flex-col">
@@ -547,7 +543,7 @@ export default function page() {
            </div>
            </div>
            ))}
-           </div>
+            </div>
             </div>
 
            <div className="ml-2 mt-14">
@@ -600,44 +596,18 @@ export default function page() {
            ))}
            </div>
           ))}
-        </div>
-      </div>
+           </div>
+          </div>
 
-      <div className="mt-4 w-64 h-12 flex items-center justify-center">
+          <div className="mt-4 w-64 h-12 flex items-center justify-center">
           <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
           ANTACIDS/ANTI-ULCER
           </h6>
-        </div>
+          </div>
 
-        {/* <div className="mt-4 w-64 h-12 flex items-center justify-center">
-          <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
-          ANTI-DIABETICS
-          </h6>
-        </div>
+          {/* Footer */}
 
-        <div className="mt-4 w-64 h-12 flex items-center justify-center">
-          <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
-          NON-STEROIDAL ANTI-INFLAMATORIES
-          </h6>
-        </div>
-
-        <div className="mt-4 w-64 h-12 flex items-center justify-center">
-          <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
-          ANTI-MALARIAL
-          </h6>
-        </div>
-
-        <div className="mt-4 w-64 h-12 flex items-center justify-center">
-          <h6 className="mt-20 text-center text-xs text-[#fff] bg-[#6180EF] px-4 rounded-full">
-          VITAMINS/HEALTHSUPPLEMENTS
-          </h6>
-        </div> */}
-
-      </div>
-
-      {/* Footer */}
-
-      <div className="flex flex-row justify-around text-white">
+          <div className="flex flex-row justify-around text-white">
         <div className="flex flex-col mt-40">
           <h2 className="font-extrabold text-white m-3"> 
             Contact Us 
@@ -698,7 +668,7 @@ export default function page() {
           <h2 className="mt-6 font-bold m-5 text-[20px] leading-[30px]">
             Sign Up For New Products
           </h2>
-          </div>
+        </div>
           <p className="mt-4 rounded-lg text-left">
           <input 
             type="email" 
@@ -712,170 +682,14 @@ export default function page() {
           </p>
           </div>
         </div>
-      </div>
-       {/* line down */}
-      <div className="w-full h-0.5 bg-white my-12"></div>
-
-
-
-
-      {/* <div className='product'>
-                    
-
-    
-
-            <p>ANTACIDS/ANTI-ULCER</p>
-                <div className='product'>
-                    <img src='' /> ~~~~~~~
-                    <p>Product Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                    <button>
-                    <img src='add'/> Add
-                    </button>
-                </div>
-                <br />
-
-                <p>ANTI-DIABEITICS</p>
-                <div className='product'>
-                    <img src='' /> ~~~~~~~
-                    <p>Product Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                    <button>
-                    <img src='add'/> Add
-                    </button>
-                </div>
-                <br />
-
-                <p>NON-STEROIDAL ANTI-INFLAMATORIES</p>
-                <div className='product'>
-                    <img src='' /> ~~~~~~~
-                    <p>Product Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                    <button>
-                    <img src='add'/> Add
-                    </button>
-                </div>
-                <br />
-
-                <p>ANTI-MALARIAL</p>
-                <div className='product'>
-                    <img src='' /> ~~~~~~~
-                    <p>Product Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                    <button>
-                    <img src='add'/> Add
-                    </button>
-                </div>
-                <br />
-
-                <p>VITAMINS/HEALTHSUPPLEMENTS</p>
-                <div className='product'>
-                    <img src='' /> ~~~~~~~
-                    <p>Product Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                    <button>
-                    <img src='add'/> Add
-                    </button>
-                </div>
-                <br />
-            </div>
-
-      </div>
-
-      {/* Footer */}
-      <div className=" ml-6 mt-14 flex flex-row justify-between text-white">
-        <div className="ml-5 mt-10">
-        <div className="flex flex-col mt-36">
-          <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]"> 
-            Contact Us 
-          </h2>
-        <p className="flex flex-row text-white mb-1"> 
-          <Image 
-            src="/assets/Images/phone.png"
-            alt="phone" 
-            width={20} 
-            height={10} 
-          />
-          <span className="ml-2">+2348144440000</span>
-        </p>
-        <p className="flex flex-row text-white mt-1 p-1">
-        <Image 
-          src="/assets/Images/email.png" 
-          alt="email" 
-          width={25} 
-          height={15} 
-        />
-        <span className="ml-2">Medicartbykalypto@Gmail.Com</span>
-        </p>
-        <div className="flex flex-row bg-white rounded-full items-center justify-center px-3 mt-2 w-28">
-          <Image src="/assets/Images/WhatsApp.png" alt="WhatsApp" width={25} height={20} />
-          <Image src="/assets/Images/Instagram.png" alt="Instagram" width={25} height={20} />
-          <Image src="/assets/Images/FB.png" alt="FB" width={25} height={20} />
-          <Image src="/assets/Images/X.png" alt="X" width={25} height={20} />
-        </div>
-        </div>
-        </div>
-
-        <div className="flex flex-col mt-40">
-          <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]">
-            Navigation
-          </h2>
-          <p className="flex flex-col items-center font-medium">
-            Solution 
-          </p>
-          <p className="flex flex-col items-center font-medium">
-            Products </p>
-          <p className="flex flex-col items-center font-medium">
-            Resources </p>
-          <p className="flex flex-col items-center font-medium">
-            Pricing </p>
-          <p className="flex flex-col items-center font-medium">
-            More </p>
-        </div>
-
-      <div className="flex flex-col items-center mr-8">
-        <div className="mt-32 bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
-        <Image 
-          src="/assets/Images/logo_no bg 1.png" 
-          alt="logo" 
-          width={125} 
-          height={90} 
-        />
-        </div>
-        <div className="mt-4 w-full max-w-md">
-          <h2 className="mt-6 font-bold m-5 text-[20px] leading-[30px]">
-            Sign Up For New Products
-          </h2>
           </div>
-          <p className="mt-4 rounded-lg text-left">
-          <input 
-            type="email" 
-            placeholder="Example@Gmail.Com"
-            className="flex rounded-lg py-1 px-20 text-left" 
-          />
-          </p>
-          <div className="mt-4 flex flex-col items-center justify-center">
-          <p className="text-center bg-[#071443] rounded-md flex flex-col items-center justify-center p-4 w-36 h-8">
-            Subscribe
-          </p>
-          </div>
-        </div>
-      </div>
-       {/* line down */}
-      <div className="w-full h-0.5 bg-white my-12"></div>
+           {/* line down */}
+          <div className="w-full h-0.5 bg-white my-12"></div>
+         
+
+           </div>
 
 
-
-    
-        
-
-            
-                  */}
-    </div>
+           </div>
   );
 }
