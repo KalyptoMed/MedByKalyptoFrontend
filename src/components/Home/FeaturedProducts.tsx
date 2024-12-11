@@ -11,10 +11,10 @@ export default function FeaturedProducts() {
         Discover our selection of top-rated and popular medical digital
         products.
       </h6>
-      <div className="w-[98%]  flex flex-wrap gap-4  justify-center  ">
+      <div className="grid  md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 px-4 xl:px-20">
         {/*each container */}
-        <div className="w-[90%] sm:w-[50%] lg:w-[31%] relative flex flex-row mb-4">
-          <div className="bg-[#071443] h-[350px] w-2/3 rounded-[25px] pr-[32%]  flex flex-col justify-center px-3">
+        <div className="relative flex flex-row mb-4">
+          <div className="bg-[#071443] h-[350px] w-2/3 rounded-[25px] pr-[32%]  flex flex-col justify-center px-2">
             <h3 className="text-white font-black  text-sm">
               Telemedicine Solutions
             </h3>
@@ -35,7 +35,7 @@ export default function FeaturedProducts() {
         </div>
 
         {/*second container */}
-        <div className="w-[90%] sm:w-[50%] lg:w-[31%] relative flex flex-row mb-4">
+        <div className="  relative flex flex-row mb-4">
           <div className="bg-[#071443] h-[350px] w-2/3 rounded-[25px] pr-[32%]  flex flex-col justify-center px-3">
             <h3 className="text-white font-black  text-sm">
               Telemedicine Solutions
@@ -57,7 +57,7 @@ export default function FeaturedProducts() {
         </div>
 
         {/*third container */}
-        <div className="w-[90%] sm:w-[50%] lg:w-[31%] relative flex flex-row mb-4">
+        <div className="  relative flex flex-row mb-4">
           <div className="bg-[#071443] h-[350px] w-2/3 rounded-[25px] pr-[32%]  flex flex-col justify-center px-3">
             <h3 className="text-white font-black  text-sm">
               Telemedicine Solutions
