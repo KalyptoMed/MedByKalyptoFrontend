@@ -4,6 +4,7 @@ import Carousel from '@/Home/Carousel';
 import Explore from '@/Home/Explore';
 import FeaturedProducts from '@/Home/FeaturedProducts';
 import ProductCategories from '@/Home/ProductCategories';
+import About from '@/Home/About';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Explore/>
       <FeaturedProducts/>
       <ProductCategories/>
+      <About/>
     </div>
   );
 }
