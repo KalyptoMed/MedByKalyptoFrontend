@@ -5,6 +5,7 @@ import Explore from '@/Home/Explore';
 import FeaturedProducts from '@/Home/FeaturedProducts';
 import ProductCategories from '@/Home/ProductCategories';
 import About from '@/Home/About';
+import Delivery from '@/Home/Delivery';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <FeaturedProducts/>
       <ProductCategories/>
       <About/>
+      <Delivery/>
     </div>
   );
 }
