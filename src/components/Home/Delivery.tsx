@@ -20,13 +20,15 @@ export default function Delivery() {
             </button>
         </div>
       </div>
-      <div className="relative h-[80%]">
-        <Image
-          src="/assets/images/delivery.png"
-          alt="delivery"
-          fill
-          className="object-cover"
-        />
+      <div className="relative  w-1/3 flex justify-center items-center my-4">
+        <div className="relative w-full h-full flex justify-center  items-center">
+          <Image
+            src="/assets/images/deliveryguy.png"
+            alt="delivery"
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
     </div>
   );

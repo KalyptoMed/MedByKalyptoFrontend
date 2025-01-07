@@ -6,6 +6,7 @@ import FeaturedProducts from '@/Home/FeaturedProducts';
 import ProductCategories from '@/Home/ProductCategories';
 import About from '@/Home/About';
 import Delivery from '@/Home/Delivery';
+import Footer from '@/Footer/Footer';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProductCategories/>
       <About/>
       <Delivery/>
+      <Footer/>
     </div>
   );
 }
