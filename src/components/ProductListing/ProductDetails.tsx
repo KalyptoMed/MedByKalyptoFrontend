@@ -30,14 +30,6 @@ export default function ProductDetails() {
           />
         </button>
       </div>
-      {/* ShoppingBar */}
-      {/* <div className="relative m-12">
-          <Image
-            src="/assets/Images/Rectangle.png"
-            alt="Rectangle"
-            width={1300}
-            height={30}
-          /> */}
       {/* <div className="absolute inset-0 flex flex-row items-center justify-around"> */}
       <div className="text-white font-sans ml-2 pr-56 align-center flex">
         <div className="text-[40px] leading-[40px] font-semibold italic text-center">
