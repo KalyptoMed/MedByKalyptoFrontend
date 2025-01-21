@@ -7,7 +7,7 @@ export default function Productlisting() {
   return (
     <div>
       <Navbar />
-      <SearchField />
+      {/* <SearchField /> */}
       <ProductListing />
       <Footer />
     </div>
