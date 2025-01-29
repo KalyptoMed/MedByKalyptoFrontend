@@ -59,6 +59,7 @@ export default function ProductDetails() {
           height={20}
           className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2"
         />
+        
       </div>
       <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl  bg-white input type=text placeholder:Antibiotics">
         <Image
