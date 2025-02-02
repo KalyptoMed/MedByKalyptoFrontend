@@ -5,7 +5,7 @@ import SearchField from "@/ProductListing/SearchField";
 
 export default function Productlisting() {
   return (
-    <div>
+    <div className="h-screen-full pt-4 bg-[#0038FF] flex flex-col">
       <Navbar />
       <SearchField />
       <ProductListing />
