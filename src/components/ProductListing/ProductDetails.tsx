@@ -3,33 +3,8 @@ import Image from "next/image";
 
 export default function ProductDetails() {
   return (
-    <div className="h-screen-full bg-[#0038FF] flex flex-col relative">
-      <div className="flex justify-between ml-12 mr-96 px-32 mt-8 py-2 bg-white border rounded-full">
-        <div className="flex items-center w-full mr-1">
-          <Image
-            src="/assets/Images/Icon (1).png"
-            alt="Icon"
-            width={20}
-            height={20}
-            className="mr-1"
-          />
-          <input
-            type="text"
-            placeholder="Antibiotics"
-            className="flex rounded-full py-1 px-1"
-          />
-        </div>
-
-        <button className="mr-1 p-2 rounded-full bg-white border border-100 absolute right-20 transform translate-x-0">
-          {/* onClick={handleClick}> */}
-          <Image
-            src="/assets/Images/sliders-horiz-2.png"
-            alt="sliders"
-            width={20}
-            height={20}
-          />
-        </button>
-      </div>
+    <div className="relative">
+      
       {/* <div className="absolute inset-0 flex flex-row items-center justify-around"> */}
       <div className="text-white font-sans ml-2 pr-56 align-center flex">
         <div className="text-[40px] leading-[40px] font-semibold italic text-center">

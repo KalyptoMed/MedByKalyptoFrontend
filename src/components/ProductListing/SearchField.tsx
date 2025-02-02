@@ -1,39 +1,35 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
-
 function SearchField() {
   return (
-    <div>
-      <div className="text-white font-sans ml-2 pr-56 align-center flex">
-        <div className="text-[40px] leading-[40px] font-semibold italic text-center">
-          <h1>LET&apos;S SKIP TO THE</h1>
-          <h1>HEALTHY PART</h1>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-        <Image
-          src="/assets/Images/shopping.png"
-          alt="shopping"
-          width={260}
-          height={300}
-        />
-      </div>
-      <div className="text-white flex flex-col justify-end items-center relative">
-        <div className="font-semibold">
-          <h4>ORDER ONLINE</h4>
-          <h4>PICKUP AT NEAREST LOCATION</h4>
-          <h4>OR TO YOUR DOORSTEP</h4>
+    <Fragment>
+      <div className="flex justify-between ml-12 mr-96 px-32 mt-8 py-2 bg-white border rounded-full">
+        <div className="flex items-center w-full mr-1">
+          <Image
+            src="/assets/Images/Icon (1).png"
+            alt="Icon"
+            width={20}
+            height={20}
+            className="mr-1"
+          />
+          <input
+            type="text"
+            placeholder="Antibiotics"
+            className="flex rounded-full py-1 px-1"
+          />
         </div>
 
-        <Image
-          src="/assets/Images/Vector 5 (1).png"
-          alt="Vector 5"
-          width={60}
-          height={20}
-          className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2"
-        />
+        <button className="mr-1 p-2 rounded-full bg-white border border-100 absolute right-20 transform translate-x-0">
+          {/* onClick={handleClick}> */}
+          <Image
+            src="/assets/Images/sliders-horiz-2.png"
+            alt="sliders"
+            width={20}
+            height={20}
+          />
+        </button>
       </div>
-    </div>
+    </Fragment>
   );
 }
 
