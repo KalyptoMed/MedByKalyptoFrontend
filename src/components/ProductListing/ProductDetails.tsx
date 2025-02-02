@@ -5,56 +5,37 @@ export default function ProductDetails() {
   return (
     <div className="relative">
       
-      {/* <div className="absolute inset-0 flex flex-row items-center justify-around"> */}
-      <div className="text-white font-sans ml-2 pr-56 align-center flex">
-        <div className="text-[40px] leading-[40px] font-semibold italic text-center">
-          <h1>LET&apos;S SKIP TO THE</h1>
-          <h1>HEALTHY PART</h1>
+      <div className="flex my-20 mx-12 bg-[#87953f] h-32 items-center justify-around">
+        <div className="text-white font-sans ml-2  align-center flex">
+          <div className="text-[40px] leading-[40px] font-semibold italic text-center">
+            <h1>LET&apos;S SKIP TO THE</h1>
+            <h1>HEALTHY PART</h1>
+          </div>
         </div>
-      </div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
-        <Image
-          src="/assets/Images/shopping.png"
-          alt="shopping"
-          width={260}
-          height={300}
-        />
-      </div>
-      <div className="text-white flex flex-col justify-end items-center relative">
-        <div className="font-semibold">
-          <h4>ORDER ONLINE</h4>
-          <h4>PICKUP AT NEAREST LOCATION</h4>
-          <h4>OR TO YOUR DOORSTEP</h4>
-        </div>
-
-        <Image
-          src="/assets/Images/Vector 5 (1).png"
-          alt="Vector 5"
-          width={60}
-          height={20}
-          className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2"
-        />
-        
-      </div>
-      <div className="search-bar ml-7 mr-96 px-32 mt-8 py-2 rounded-4xl  bg-white input type=text placeholder:Antibiotics">
-        <Image
-          src="/assets/Images/Icon (1).png"
-          alt="Icon"
-          width={20}
-          height={20}
-        />
-        {/* <input type='text' placeholder='Antibiotics' />  */}
-        <button className="searchBtn bg-white ">
+        <div className="">
           <Image
-            src="/assets/Images/sliders-horiz-2.png"
-            alt="sliders"
-            width={20}
-            height={20}
+            src="/assets/Images/shopping.png"
+            alt="shopping"
+            width={260}
+            height={300}
           />
-        </button>
+        </div>
+        <div className="text-white flex flex-col justify-end items-center relative">
+          <div className="font-semibold">
+            <h4>ORDER ONLINE</h4>
+            <h4>PICKUP AT NEAREST LOCATION</h4>
+            <h4>OR TO YOUR DOORSTEP</h4>
+          </div>
+
+          <Image
+            src="/assets/Images/Vector 5 (1).png"
+            alt="Vector 5"
+            width={60}
+            height={20}
+            className="absolute top-0 left-8 transform -translate-x-full -translate-y-1/2"
+          />
+        </div>
       </div>
-      <br />
-      <br />
 
       {/* From Trending Products to See all Products */}
       <div className="ml-2">
