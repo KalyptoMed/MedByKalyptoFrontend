@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import DrugImage from "@/public/assets/images/drugPix.png";
 
 export default function FeaturedProducts() {
   return (
@@ -23,7 +24,10 @@ export default function FeaturedProducts() {
               services.
             </h5>
           </div>
-          <div className=" bg-cover bg-[url('/assets/images/drugPix.png')] w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8 ">
+          <div
+            className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
+            style={{ backgroundImage: `url(${DrugImage.src})` }}
+          >
             <h3 className="text-white font-extrabold text-[24px] text-center">
               MEDICAL DRUGS
             </h3>
@@ -45,7 +49,11 @@ export default function FeaturedProducts() {
               services.
             </h5>
           </div>
-          <div className=" bg-cover bg-[url('/assets/images/drugPix.png')] w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8 ">
+          <div
+            className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
+            style={{ backgroundImage: `url(${DrugImage.src})` }}
+          >
+            {" "}
             <h3 className="text-white font-extrabold text-[24px] text-center">
               MEDICAL DRUGS
             </h3>
@@ -67,7 +75,11 @@ export default function FeaturedProducts() {
               services.
             </h5>
           </div>
-          <div className=" bg-cover bg-[url('/assets/images/drugPix.png')] w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8 ">
+          <div
+            className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
+            style={{ backgroundImage: `url(${DrugImage.src})` }}
+          >
+            {" "}
             <h3 className="text-white font-extrabold text-[24px] text-center">
               MEDICAL DRUGS
             </h3>

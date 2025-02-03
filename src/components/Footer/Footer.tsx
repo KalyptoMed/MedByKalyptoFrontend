@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export default function Footer() {
   return (
     <div className="flex flex-row justify-around text-white bg-[#0038ff] py-6">
@@ -54,7 +55,7 @@ export default function Footer() {
       <div className="flex flex-col items-center mr-8">
         <div className=" bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
           <Image
-            src="/assets/Images/logo_no bg 1.png"
+            src="/assets/images/logo_no bg 1.png"
             alt="logo"
             width={125}
             height={90}

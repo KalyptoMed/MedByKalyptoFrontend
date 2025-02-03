@@ -1,7 +1,7 @@
-import Navbar from "@/Navbar/Navbar";
-import Footer from "@/Footer/Footer";
-import ProductListing from "@/ProductListing/ProductDetails";
-import SearchField from "@/ProductListing/SearchField";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import ProductListing from "@/components/ProductListing/ProductDetails";
+import SearchField from "@/components/ProductListing/SearchField";
 
 export default function Productlisting() {
   return (
