@@ -14,7 +14,7 @@ export default function ProductDetails() {
         </div>
         <div className="">
           <Image
-            src="/assets/Images/shopping.png"
+            src="/assets/images/shopping.png"
             alt="shopping"
             width={260}
             height={300}
@@ -28,7 +28,7 @@ export default function ProductDetails() {
           </div>
 
           <Image
-            src="/assets/Images/Vector 5 (1).png"
+            src="/assets/images/Vector 5 (1).png"
             alt="Vector 5"
             width={60}
             height={20}
@@ -47,7 +47,7 @@ export default function ProductDetails() {
                 for you!
                 {/* love logo */}
                 <Image
-                  src="/assets/Images/love.png"
+                  src="/assets/images/love.png"
                   alt="love"
                   width={60}
                   height={36}
@@ -59,7 +59,7 @@ export default function ProductDetails() {
           <div className="text-[#CFFC51] text-right font-normal flex items-center">
             <span className="">See all products</span>
             <Image
-              src="/assets/Images/Arrow.png"
+              src="/assets/images/Arrow.png"
               alt="Arrow"
               width={20}
               height={20}
@@ -83,7 +83,7 @@ export default function ProductDetails() {
               <div key={index} className="relative my-2">
                 <div className="flex flex-col">
                   <Image
-                    src="/assets/Images/Drug.png"
+                    src="/assets/images/Drug.png"
                     alt="Drug"
                     width={250}
                     height={100}
@@ -99,7 +99,7 @@ export default function ProductDetails() {
                   </div>
                   <div className="flex flex-row justify-between">
                     <Image
-                      src="/assets/Images/rate.png"
+                      src="/assets/images/rate.png"
                       alt="rate"
                       width={20}
                       height={4}
@@ -108,7 +108,7 @@ export default function ProductDetails() {
 
                     <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                       <Image
-                        src="/assets/Images/Add.png"
+                        src="/assets/images/Add.png"
                         alt="Add"
                         width={15}
                         height={10}
@@ -134,7 +134,7 @@ export default function ProductDetails() {
               <div key={index} className="relative my-2">
                 <div className="flex flex-col">
                   <Image
-                    src="/assets/Images/Drug.png"
+                    src="/assets/images/Drug.png"
                     alt="Drug"
                     width={250}
                     height={100}
@@ -150,7 +150,7 @@ export default function ProductDetails() {
                   </div>
                   <div className="flex flex-row justify-between">
                     <Image
-                      src="/assets/Images/rate.png"
+                      src="/assets/images/rate.png"
                       alt="rate"
                       width={20}
                       height={4}
@@ -158,7 +158,7 @@ export default function ProductDetails() {
 
                     <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                       <Image
-                        src="/assets/Images/Add.png"
+                        src="/assets/images/Add.png"
                         alt="Add"
                         width={15}
                         height={10}
@@ -179,7 +179,7 @@ export default function ProductDetails() {
                   for you!
                 </h1>
                 <Image
-                  src="/assets/Images/love.png"
+                  src="/assets/images/love.png"
                   alt="love"
                   width={50}
                   height={30}
@@ -201,7 +201,7 @@ export default function ProductDetails() {
                   {[...Array(5)].map((_, index) => (
                     <div key={index} className="relative">
                       <Image
-                        src="/assets/Images/Drug.png"
+                        src="/assets/images/Drug.png"
                         alt="Drug"
                         width={200}
                         height={160}
@@ -228,7 +228,7 @@ export default function ProductDetails() {
                 <div className="mt-12 flex flex-row space-x-10 justify-around">
                   <div className="relative flex flex-col items-center">
                     <Image
-                      src="/assets/Images/Drug2.png"
+                      src="/assets/images/Drug2.png"
                       alt="Drug2"
                       width={200}
                       height={160}
@@ -260,7 +260,7 @@ export default function ProductDetails() {
                 <div key={index} className="relative my-2">
                   <div className="flex flex-col">
                     <Image
-                      src="/assets/Images/Drug.png"
+                      src="/assets/images/Drug.png"
                       alt="Drug"
                       width={250}
                       height={100}
@@ -276,7 +276,7 @@ export default function ProductDetails() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Image
-                        src="/assets/Images/rate.png"
+                        src="/assets/images/rate.png"
                         alt="rate"
                         width={20}
                         height={4}
@@ -284,7 +284,7 @@ export default function ProductDetails() {
 
                       <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                         <Image
-                          src="/assets/Images/Add.png"
+                          src="/assets/images/Add.png"
                           alt="Add"
                           width={15}
                           height={10}
@@ -310,7 +310,7 @@ export default function ProductDetails() {
                 <div key={index} className="relative my-2">
                   <div className="flex flex-col">
                     <Image
-                      src="/assets/Images/Drug.png"
+                      src="/assets/images/Drug.png"
                       alt="Drug"
                       width={250}
                       height={100}
@@ -328,7 +328,7 @@ export default function ProductDetails() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Image
-                        src="/assets/Images/rate.png"
+                        src="/assets/images/rate.png"
                         alt="rate"
                         width={20}
                         height={4}
@@ -336,7 +336,7 @@ export default function ProductDetails() {
 
                       <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                         <Image
-                          src="/assets/Images/Add.png"
+                          src="/assets/images/Add.png"
                           alt="Add"
                           width={15}
                           height={10}
@@ -362,7 +362,7 @@ export default function ProductDetails() {
                 <div key={index} className="relative my-2">
                   <div className="flex flex-col">
                     <Image
-                      src="/assets/Images/Drug.png"
+                      src="/assets/images/Drug.png"
                       alt="Drug"
                       width={250}
                       height={100}
@@ -381,7 +381,7 @@ export default function ProductDetails() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Image
-                        src="/assets/Images/rate.png"
+                        src="/assets/images/rate.png"
                         alt="rate"
                         width={20}
                         height={4}
@@ -389,7 +389,7 @@ export default function ProductDetails() {
 
                       <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                         <Image
-                          src="/assets/Images/Add.png"
+                          src="/assets/images/Add.png"
                           alt="Add"
                           width={15}
                           height={10}
@@ -415,7 +415,7 @@ export default function ProductDetails() {
                 <div key={index} className="relative my-2">
                   <div className="flex flex-col">
                     <Image
-                      src="/assets/Images/Drug.png"
+                      src="/assets/images/Drug.png"
                       alt="Drug"
                       width={250}
                       height={100}
@@ -434,7 +434,7 @@ export default function ProductDetails() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Image
-                        src="/assets/Images/rate.png"
+                        src="/assets/images/rate.png"
                         alt="rate"
                         width={20}
                         height={4}
@@ -442,7 +442,7 @@ export default function ProductDetails() {
 
                       <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                         <Image
-                          src="/assets/Images/Add.png"
+                          src="/assets/images/Add.png"
                           alt="Add"
                           width={15}
                           height={10}
@@ -468,7 +468,7 @@ export default function ProductDetails() {
                 <div key={index} className="relative my-2">
                   <div className="flex flex-col">
                     <Image
-                      src="/assets/Images/Drug.png"
+                      src="/assets/images/Drug.png"
                       alt="Drug"
                       width={250}
                       height={100}
@@ -487,7 +487,7 @@ export default function ProductDetails() {
                     </div>
                     <div className="flex flex-row justify-between">
                       <Image
-                        src="/assets/Images/rate.png"
+                        src="/assets/images/rate.png"
                         alt="rate"
                         width={20}
                         height={4}
@@ -495,7 +495,7 @@ export default function ProductDetails() {
 
                       <button className="flex flex-row items-center border border-gray-300 rounded-md px-2 py-0.5">
                         <Image
-                          src="/assets/Images/Add.png"
+                          src="/assets/images/Add.png"
                           alt="Add"
                           width={15}
                           height={10}
