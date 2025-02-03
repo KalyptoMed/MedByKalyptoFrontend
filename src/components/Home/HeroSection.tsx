@@ -1,11 +1,16 @@
 import React from "react";
-import Navbar from "@/Navbar/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
+import DrugIcon from "@/public/assets/images/drugicons.png";
+import Herobackground from "@/public/assets/images/HeroBackground.jpg";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 export default function HeroSection() {
   return (
-    <div className=" bg-cover bg-[url('/assets/images/HeroBackground.jpg')] h-auto pt-4">
+    <div
+      className=" bg-cover h-auto pt-4"
+      style={{ backgroundImage: `url(${Herobackground.src})` }}
+    >
       <Navbar />
       <div className="flex flex-col md:flex-row p-10">
         <div className="flex flex-col w-full md:w-2/4">
@@ -24,13 +29,13 @@ export default function HeroSection() {
           </h6>
           <div className="flex justify-center mr-20 mt-10">
             <button className="bg-white hover:bg-[#0038FF] text-[#0038FF] hover:text-white px-4 flex gap-2 items-center font-semibold py-2 rounded-lg ">
-             Shop now
-             <BsFillArrowUpRightCircleFill size={18} />
+              Shop now
+              <BsFillArrowUpRightCircleFill size={18} />
             </button>
           </div>
         </div>
         <Image
-          src="/assets/images/drugicons.png"
+          src={DrugIcon}
           alt="drug"
           width={500}
           height={500}

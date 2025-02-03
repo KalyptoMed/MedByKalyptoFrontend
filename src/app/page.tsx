@@ -1,12 +1,12 @@
 import React from 'react';
-import HeroSection from '@/Home/HeroSection';
-import Carousel from '@/Home/Carousel';
-import Explore from '@/Home/Explore';
-import FeaturedProducts from '@/Home/FeaturedProducts';
-import ProductCategories from '@/Home/ProductCategories';
-import About from '@/Home/About';
-import Delivery from '@/Home/Delivery';
-import Footer from '@/Footer/Footer';
+import HeroSection from '@/components/Home/HeroSection';
+import Carousel from '@/components/Home/Carousel';
+import Explore from '@/components/Home/Explore';
+import FeaturedProducts from '@/components/Home/FeaturedProducts';
+import ProductCategories from '@/components/Home/ProductCategories';
+import About from '@/components/Home/About';
+import Delivery from '@/components/Home/Delivery';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
