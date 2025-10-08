@@ -1,0 +1,35 @@
+import { PiPackage } from "react-icons/pi";
+import Image from "next/image";
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+
+export default function Delivery() {
+  return (
+    <div className="bg-[#004D4A] h-[370px] w-full flex flex-col md:flex-row text-center my-1">
+      <div className="flex flex-col w-1/2 justify-center md:pl-20">
+        <div className="flex flex-row  w-28 justify-center items-center bg-[#AABE43] rounded-lg py-1 px-2 gap-2">
+          <PiPackage color="#fff" />
+          <p className="text-white text-sm">Delivery</p>
+        </div>
+        <h1 className="font-extrabold text-4xl text-white my-3 md:text-left ">
+          Enjoy free delivery from Medicart by Kalypto
+        </h1>
+        <div className="w-4/6 py-6 flex flex-col justify-center  ">
+        <button className="bg-[#EBFFF5] hover:bg-[#004D4A] text-[#004D4A] hover:text-white hover:border-white border border-[#004D4A] px-2 flex gap-2  items-center font-semibold py-1 rounded-lg  w-32">
+              Shop now
+              <BsFillArrowUpRightCircleFill size={18} />
+            </button>
+        </div>
+      </div>
+      <div className="relative  w-1/3 flex justify-center items-center my-4">
+        <div className="relative w-full h-full flex justify-center  items-center">
+          <Image
+            src="/assets/images/deliveryguy.png"
+            alt="delivery"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
