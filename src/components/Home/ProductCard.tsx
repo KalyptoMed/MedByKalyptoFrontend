@@ -19,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <p className="card-text">{product.price}</p>
       <div className="flex justify-between items-center">
         <BsHeart size={18} />
-        <div className="flex gap-2 border border-[#071443] rounded-md px-2 items-center text-sm hover:bg-[#0038ff] hover:text-white">
+        <div className="flex gap-2 border border-[#071443] rounded-md px-2 items-center text-sm hover:bg-[#004D4A] hover:text-white">
           <BsCart4 size={14} />
           Add
         </div>

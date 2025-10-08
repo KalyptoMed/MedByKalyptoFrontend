@@ -72,7 +72,7 @@ const Carousel = () => {
   }, [autoplay]);
 
   return (
-    <div className="w-full py-6  pl-1 md:pl-4 bg-[#F2F3F4]">
+    <div className="w-full py-6  pl-1 md:pl-4 bg-[#ebfff5]">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container flex">
           {slideData.map((slide, index) => (

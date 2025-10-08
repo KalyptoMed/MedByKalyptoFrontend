@@ -30,7 +30,7 @@ export default function ProductCategories() {
   ];
 
   return (
-    <div className="bg-[#0038ff] h-auto py-10 flex flex-col justify-center text-center  my-1">
+    <div className="bg-[#004D4A] h-auto py-10 flex flex-col justify-center text-center  my-1">
       <h3 className="font-extrabold text-4xl text-white my-3 md:text-left md:pl-20">
         Product Categories
       </h3>

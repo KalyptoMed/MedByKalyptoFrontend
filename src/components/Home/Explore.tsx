@@ -6,10 +6,10 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 export default function Explore() {
   return (
-    <div className="bg-[#0038ff] h-auto flex flex-col lg:flex-row my-1">
+    <div className="bg-[#004D4A] h-auto flex flex-col lg:flex-row my-1">
       <div className="w-4/5 lg:w-2/5 h-[300px] lg:h-[400px] m-10 lg:m-20 relative">
         <div className="bg-white rounded-e-[45px]  rounded-t-[40px]  h-[371px] mt-10">
-          <div className=" bg-[#071443]  rounded-e-[40px] rounded-t-[40px] h-[370px] ml-[2px]   ">
+          <div className=" bg-[#155]  rounded-e-[40px] rounded-t-[40px] h-[370px] ml-[2px]   ">
             <Image
               src="/assets/images/ladydoctor.png"
               alt="Picture of the author"
@@ -28,7 +28,7 @@ export default function Explore() {
 
         {/*Box section */}
         <div className="relative flex justify-center items-center h-[300px] lg:h-[280px] mx-[5%] lg:w-4/5 lg:my-10">
-           <div className="absolute bg-[#071443] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3 left-0 lg:left-2">
+           <div className="absolute bg-[#155f4e] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3 left-0 lg:left-2 shadow-transparent">
             <FaCompass color="#fff" size={20} />
             <h4 className="text-white text-xs lg:text-[11px] font-bold my-2 text-center">
               Wide Range of Health Products
@@ -40,7 +40,7 @@ export default function Explore() {
           </div>
 
           {/* Box 2 */}
-          <div className="absolute bg-[#071443] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3  bottom-0 lg:bottom-2">
+          <div className="absolute bg-[#155f4e] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3  bottom-0 lg:bottom-2 shadow-transparent">
             <BsTrophyFill color="#fff" size={20} />
             <h4 className="text-white text-xs lg:text-[11px] font-bold my-2 text-center">
               Verified Product Supplies
@@ -51,7 +51,7 @@ export default function Explore() {
           </div>
 
           {/* Box 3 */}
-          <div className="absolute bg-[#071443] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3 animate-clockwise-3 right-0 lg:right-2">
+          <div className="absolute bg-[#155f4e] w-32 h-38 lg:w-36 lg:h-40 rounded-3xl flex flex-col items-center justify-center py-3 px-3 animate-clockwise-3 right-0 lg:right-2 shadow-transparent">
             <RiSendPlaneFill color="#fff" size={20} />
             <h4 className="text-white text-xs lg:text-[11px] font-bold my-2 text-center">
               Customized Recommendations
