@@ -1,8 +1,10 @@
 import React from "react";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
-import DrugImage from "@/public/assets/images/drugPix.png";
+// import DrugImage from "@/public/assets/images/drugPix.png";
 
 export default function FeaturedProducts() {
+  const backroundImageUrl = "/assets/images/drugPix.png";
+  
   return (
     <div className="bg-[#0038ff] h-auto py-10 flex flex-col justify-center text-center  my-1">
       <h3 className="font-extrabold text-4xl text-white my-3 md:text-left md:pl-20 ">
@@ -26,7 +28,7 @@ export default function FeaturedProducts() {
           </div>
           <div
             className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
-            style={{ backgroundImage: `url(${DrugImage.src})` }}
+            style={{ backgroundImage: `url(${backroundImageUrl})` }}
           >
             <h3 className="text-white font-extrabold text-[24px] text-center">
               MEDICAL DRUGS
@@ -51,7 +53,7 @@ export default function FeaturedProducts() {
           </div>
           <div
             className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
-            style={{ backgroundImage: `url(${DrugImage.src})` }}
+            style={{ backgroundImage: `url(${backroundImageUrl})` }}
           >
             {" "}
             <h3 className="text-white font-extrabold text-[24px] text-center">
@@ -77,7 +79,7 @@ export default function FeaturedProducts() {
           </div>
           <div
             className=" bg-cover w-4/6 right-0 h-[350px] rounded-[25px] absolute flex flex-col items-center pt-8"
-            style={{ backgroundImage: `url(${DrugImage.src})` }}
+            style={{ backgroundImage: `url(${ backroundImageUrl})` }}
           >
             {" "}
             <h3 className="text-white font-extrabold text-[24px] text-center">
