@@ -12,31 +12,38 @@ const SignupForm: React.FC = () => {
       {/* LEFT IMAGE SECTION */}
       <div className="relative w-3/5 hidden md:block">
         <Image
-          src="/assets/images/Male-chemist.png"
-          alt="Pharmacist"
+          src="/assets/images/MediGroup.png"
+          alt="MediCart Staff"
           layout="fill"
           objectFit="cover"
+        //   className="w-full h-full object-cover"
         />
       </div>
 
       {/* RIGHT FORM SECTION */}
       <div className="flex flex-col justify-center w-full rounded-l-3xl md:w-2/5 p-10 bg-[##003D33] text-white">
-        <h2 className="text-3xl font-semibold mb-4">Company details</h2>
-        <p>Let’s get your company running</p>
+        <h2 className="text-3xl font-semibold mb-4">Sign up</h2>
         <p className="mb-8 text-gray-300">
-          Are you a vendor? Get your free Medicart account now
+          Hey! Welcome to MediCart. Get your free MediCart account now.
         </p>
 
         <form className="flex flex-col space-y-4 text-[#000000] bg-[##003D33] ">
+            {/* <div className="mb-4"> */}
+            {/* <label htmlFor="surname" className="">
+              Surname
+            </label> */}
+            {/* <div className="p-3 rounded-full text-gray-600 text-sm bg-transparent border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300">  */}
           <input
             type="text"
-            placeholder="Company name"
+            placeholder="Enter Surname"
             className="p-3 rounded-full text-gray-800 text-sm bg-transparent border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
           />
+            {/* </div> */}
+            {/* </div>  */}
 
           <input
             type="text"
-            placeholder="Vat"
+            placeholder="First Name"
             className="p-3 rounded-full text-gray-800 text-sm bg-transparent border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-300"
           />
           <input
@@ -99,7 +106,7 @@ const SignupForm: React.FC = () => {
 
         <p className="mt-6 text-sm text-gray-300">
           Already have an account?{" "}
-          <a href="/vendor-login" className="text-[#D9FF06] underline">
+          <a href="/customer-login" className="text-[#D9FF06] underline">
             Log in
           </a>
         </p>

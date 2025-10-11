@@ -5,12 +5,11 @@ import React from "react";
 import { useRouter } from "next/navigation"; 
 
 
-const SignupPageContent: React.FC = () => {
+const SigninPageContent: React.FC = () => {
   const router = useRouter();
 
   const handleSignupClick = () => {
-    router.push("/customer-form");
-    // router.push("/signup/form"); // navigate to the signup form page
+    router.push("/med-form");
   };
 
 
@@ -19,10 +18,9 @@ const SignupPageContent: React.FC = () => {
       {/* LEFT SIDE IMAGE */}
       <div className="relative md:flex w-3/5 bg-gray-100 items-center justify-center">
         <Image 
-          src="/assets/images/care-job-scene-with-patient-being-cared 1.png"
+          src="/assets/images/Female doctor.png"
           alt="DoctorCare"
           fill
-          // className="w-full h-full"
           style={{ objectFit: "cover" }}
         />
       </div>
@@ -35,22 +33,19 @@ const SignupPageContent: React.FC = () => {
             secure, smarter <br />
             healthcare.
           </h1>
-          {/* <p className="text-gray-500 text-sm mb-6">
-            Our app gives you total control over your health
-          </p> */}
 
           <button
             onClick={handleSignupClick}
             className="w-full mt-2 bg-green-900 text-white py-4 rounded-full hover:bg-green-700 transition"
             type="button"
           >
-            <a href="/customer-form" className="text-[#004D4A] underline"></a>
+            <a href="/med-form" className="text-[#004D4A] underline"></a>
             <span className="text-[#D0FF71]">Sign in</span>
           </button>
 
           <p className="text-sm mt-6 py-4 bg-green-200 rounded-full text-[#004D4A] transition-shadow">
             Have account already?{" "}
-            <a href="/customer-login" className="text-[#004D4A] underline">
+            <a href="/med-login" className="text-[#004D4A] underline">
               Log in
             </a>
           </p>
@@ -70,4 +65,4 @@ const SignupPageContent: React.FC = () => {
   );
 };
 
-export default SignupPageContent;
+export default SigninPageContent;

@@ -6,23 +6,22 @@ import Link from "next/link";
 import { Mail, Lock } from "lucide-react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const LoginPageContent: React.FC = () => {
+const LoginPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-[#EBFFF5]">
       {/* LEFT SIDE IMAGE */}
       <div className="relative md:flex w-3/5 bg-gray-100 items-center justify-center">
         <Image
-          src="/assets/images/login_img.png" 
-          alt="Doctor"
+          src="/assets/images/Female-pharmacist.png" 
+          alt="Pharmacist"
           fill
-          // className="w-full h-full"
           style={{ objectFit: "cover" }}
         />
       </div>
 
       {/* RIGHT SIDE CONTENT */}
-      <div className="flex flex-col justify-center items-center w-full rounded-l-full md:w-2/5 p-6 md:p-12">
+      <div className="flex flex-col justify-center items-center w-full rounded-l-3xl md:w-2/5 p-6 md:p-12">
         <div className="w-full max-w-md mb-20 text-center">
           <h1 className="text-5xl font-bold mt-10 leading-snug text-[#004D4A]">
             Welcome   
@@ -87,7 +86,7 @@ const LoginPageContent: React.FC = () => {
           {/* Redirect to signup */}
           <p className="text-sm py-2 text-center text-gray-600 mt-2">
             Don’t have an account?{" "}
-            <Link href="/customer-form" className="text-[#004D4A] font-semibold hover:underline">
+            <Link href="/vendor-signup" className="text-[#004D4A] font-semibold hover:underline">
               Sign up
             </Link>
           </p>
@@ -117,6 +116,6 @@ const LoginPageContent: React.FC = () => {
   );
 };
 
-export default LoginPageContent;
+export default LoginPage;
 
 
