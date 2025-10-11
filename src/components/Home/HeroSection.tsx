@@ -1,8 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
-// import DrugIcon from "@/public/assets/images/drugicons.png";
-// import Herobackground from "@/public/assets/images/HeroBackground.jpg";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 export default function HeroSection() {
