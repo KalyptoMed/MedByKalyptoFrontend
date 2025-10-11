@@ -7,10 +7,12 @@ import ProductCategories from '@/components/Home/ProductCategories';
 import About from '@/components/Home/About';
 import Delivery from '@/components/Home/Delivery';
 import Footer from '@/components/Footer/Footer';
+import Navbar from '@/components/Navbar/Navbar';
 
 export default function Home() {
   return (
     <div className="justify-center bg-white overflow-hidden">
+      <Navbar/>
       <HeroSection/>
       <Carousel/>
       <Explore/>

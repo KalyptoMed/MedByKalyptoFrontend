@@ -1,15 +1,12 @@
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
-// import DrugIcon from "@/public/assets/images/drugicons.png";
-// import Herobackground from "@/public/assets/images/HeroBackground.jpg";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 
 export default function HeroSection() {
   const Herobackground = "/assets/images/bgimage.png";
   return (
     <div
-      className="bg-cover bg-center h-auto pt-4 relative"
+      className="bg-cover bg-center h-auto relative pt-20"
       style={{
         backgroundImage: `
         linear-gradient(
@@ -23,9 +20,8 @@ export default function HeroSection() {
         `,
       }}
     >
-      <Navbar />
       <div className="flex flex-col md:flex-row pt-10 md:pt-20 justify-between  items-center md:items-start text-center md:text-left px-4 md:px-20 ">
-        <div className="flex flex-col w-full md:w-2/4">
+        <div className="flex flex-col w-full md:w-2/4 pb-20">
           <div className="h-auto flex flex-col font-sans">
             <h4 className="text-[#ebfff5] text-5xl md:text-6xl font-light mt-10 font-sans">
               <strong className="text-[#d0fe71]  text-7xl font-extrabold italic">
