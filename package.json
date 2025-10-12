@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "embla-carousel-react": "^8.4.0",
+    "lucide-react": "^0.544.0",
     "medbykalyptofrontend": "file:",
     "next": "14.2.13",
     "react": "^18",
