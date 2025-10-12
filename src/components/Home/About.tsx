@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="bg-[#0038ff] h-[370px] w-full flex flex-col md:flex-row text-center  ">
+    <div className="bg-[#004D4A] h-[470px] w-full flex flex-col md:flex-row text-center  ">
       <div className="relative h-auto w-2/6">
         <Image
           src="/assets/images/smiley-male-doctor-with-crossed-arms.png"
@@ -19,8 +19,8 @@ export default function About() {
         <h3 className="text-[#d0d0d0] font-thin text-xl mb-10 text-center md:text-left md:pl-20">
           Provides detailed information about our product
         </h3>
-        <div className=" bg-[#071443] h-auto w-3/6 rounded-2xl py-8 px-4 mx-auto relative">
-          <h6 className="text-white text-sm ">
+        <div className=" bg-[#EBFFF5] h-auto w-3/6 rounded-2xl py-8 px-4 mx-auto relative">
+          <h6 className="text-[#004D4A] text-sm ">
             Medicart by Kalypto is at the forefront of the digital healthcare
             revolution, providing a simple, secure, and efficient way to order
             medications online. By combining convenience, accessibility, and

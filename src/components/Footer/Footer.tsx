@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="flex flex-row justify-around text-white bg-[#0038ff] py-6">
+    <div className="flex flex-row justify-around text-white bg-[#004D4A] py-6">
       <div className="flex flex-col ">
         <h2 className="font-extrabold text-white m-3">Contact Us</h2>
         <p className="flex flex-row text-white mb-1">
@@ -41,15 +41,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col ">
-        <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]">
+      <div className="flex flex-col justify-around mr-8  text-lg font-medium cursor-pointer">
+        <h2 className="font-extrabold mb-2 text-[34px] leading-[32px]">
           Navigation
         </h2>
-        <p className="flex flex-col items-center font-medium">Solution</p>
-        <p className="flex flex-col items-center font-medium">Products </p>
-        <p className="flex flex-col items-center font-medium">Resources </p>
-        <p className="flex flex-col items-center font-medium">Pricing </p>
-        <p className="flex flex-col items-center font-medium">More </p>
+        <p className="flex flex-col items-center ">Solution</p>
+        <p className="flex flex-col items-center ">Products </p>
+        <p className="flex flex-col items-center ">Resources </p>
+        <p className="flex flex-col items-center ">Pricing </p>
+        <p className="flex flex-col items-center ">More </p>
       </div>
 
       <div className="flex flex-col items-center mr-8">
@@ -74,7 +74,7 @@ export default function Footer() {
           />
         </p>
         <div className="mt-4 flex flex-col items-center justify-center">
-          <p className="text-center bg-[#071443] rounded-md flex flex-col items-center justify-center p-4 w-36 h-8">
+          <p className="text-center text-[#004D4A] bg-[#D0FF71] rounded-md flex flex-col items-center justify-center p-4 w-36 h-8">
             Subscribe
           </p>
         </div>
