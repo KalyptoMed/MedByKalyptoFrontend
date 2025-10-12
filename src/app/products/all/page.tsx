@@ -1,6 +1,4 @@
 import AllProducts from "@/components/AllProducts/AllProducts";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import SearchField from "@/components/ProductListing/SearchField";
 
 export const metadata = {
@@ -11,10 +9,8 @@ export const metadata = {
 export default function AllProductsPage() {
   return (
     <div className="min-h-screen bg-[#004D4A] flex flex-col">
-      <Navbar />
       <SearchField />
       <AllProducts />
-      <Footer />
     </div>
   );
 }

@@ -32,7 +32,6 @@ export default function ProductDetails() {
         </div>
       ))}
 
-      {/* Footer Line */}
       <div className="w-full h-0.5 bg-white my-12"></div>
     </div>
   );

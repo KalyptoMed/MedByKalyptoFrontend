@@ -41,9 +41,9 @@ export default function ProductCard({
     };
   return (
     <Link 
-    href={`/products/${productSlug}`}
-    className="relative w-[250px] bg-transparent my-4 mb-10 rounded-2xl shadow-lg hover:scale-105 transition-transform"
-  >
+      href={`/products/${productSlug}`}
+      className="relative w-[250px] bg-transparent my-4 mb-10 rounded-2xl shadow-lg hover:scale-105 transition-transform"
+    >
       {/* Product Image */}
       <div className="flex flex-col">
         <Image

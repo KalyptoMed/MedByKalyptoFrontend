@@ -1,10 +1,8 @@
 'use client'
 
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import { DeliveryForm, DeliveryFormData } from "@/components/Checkout/CheckoutForm";
 import { OrderItem, OrderSummary } from "@/components/Checkout/OrderSummary";
-import DrugImage from "@/public/assets/images/WhiteDrugPlastic.png";
+import DrugImage from "./../../../public/assets/images/Drug.png";
 
 export default function CheckoutPage() {
   const handleFormSubmit = (data: DeliveryFormData) => {
@@ -32,11 +30,13 @@ export default function CheckoutPage() {
   ];
 
   return (
-    <div className="bg-[#004D4A] h-screen-full pt-4 flex flex-col">
-      <Navbar />
-        <div className="min-h-screen p-6">
-              <div className="max-w-7xl mx-auto bg-white p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="h-screen-full bg-[#004D4A] pt-4 max-w-7xl mx-auto p-12 mt-52">
+      <div className="bg-white  p-12">
+      <h2 className="text-2xl font-bold text-teal-900 mb-6">
+        1. Delivery
+      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
                   {/* Left Column - Form */}
                   <div className="lg:col-span-2">
                     <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -55,9 +55,8 @@ export default function CheckoutPage() {
                     />
                   </div>
                 </div>
-              </div>
-        </div>
-      <Footer /> 
+      </div>  
+
     </div>
   );
 }

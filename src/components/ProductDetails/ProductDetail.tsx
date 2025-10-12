@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Share2, Heart, Minus, Plus } from 'lucide-react';
+import Link from 'next/link';
 
 
 interface Product {
@@ -108,9 +109,11 @@ export function ProductDetail({ product }: { product: Product }) {
             <div className='flex justify-between mb-8'>
               {/* Action Buttons */}
               <div className="flex gap-4 mb-6">
-                <button className="bg-[#004D4A] text-xl hover:bg-teal-900 text-[#D0FF71] px-8 py-3 rounded-lg font-semibold transition">
+              <Link
+                href={`/checkout`}
+                className="bg-[#004D4A] text-xl hover:bg-teal-900 text-[#D0FF71] px-8 py-3 rounded-lg font-semibold transition">
                   Buy Now
-                </button>
+                </Link>
                 <button className="bg-[#004D4A4D] text-xl hover:bg-[#D0FF71] text-[#004D4A] px-8 py-3 rounded-lg font-semibold transition">
                   Add to Cart
                 </button>

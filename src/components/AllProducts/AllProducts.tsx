@@ -249,7 +249,6 @@ export default function AllProducts() {
         )}
       </div>
 
-      {/* Footer Line */}
       <div className="w-full h-0.5 bg-white/20 my-12"></div>
     </div>
   );

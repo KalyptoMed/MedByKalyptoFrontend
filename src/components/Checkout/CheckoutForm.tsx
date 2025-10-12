@@ -49,9 +49,7 @@ export function DeliveryForm({ defaultCountry = 'Nigeria' }: DeliveryFormProps) 
   return (
     <div className="max-w-3xl">
       {/* Section Title */}
-      <h2 className="text-2xl font-bold text-teal-900 mb-6">
-        1. Delivery
-      </h2>
+
 
       {/* Delivery Method Selection */}
       <div className="space-y-3 mb-8">
