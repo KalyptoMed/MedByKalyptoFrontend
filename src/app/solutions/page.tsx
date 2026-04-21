@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Video, Pill, FlaskConical, Heart, Truck, ShieldCheck,
+  Video, Pill, FlaskConical, Heart, ShieldCheck,
   ArrowRight, Star, Users, Building2, Stethoscope,
   Clock, CheckCircle, Zap, Globe, Lock, BarChart3,
 } from "lucide-react";
