@@ -1,24 +1,19 @@
-import React from 'react';
-import HeroSection from '@/components/Home/HeroSection';
-import Carousel from '@/components/Home/Carousel';
-import Explore from '@/components/Home/Explore';
-import FeaturedProducts from '@/components/Home/FeaturedProducts';
-import ProductCategories from '@/components/Home/ProductCategories';
-import About from '@/components/Home/About';
-import Delivery from '@/components/Home/Delivery';
-import Footer from '@/components/Footer/Footer';
+import HeroSection from "@/components/Home/HeroSection";
+import CategorySection from "@/components/Home/CategorySection";
+import FeaturedProducts from "@/components/Home/FeaturedProducts";
+import TrustSection from "@/components/Home/TrustSection";
+import TestimonialsSection from "@/components/Home/TestimonialsSection";
+import CTASection from "@/components/Home/CTASection";
 
 export default function Home() {
   return (
-    <div className="justify-center bg-white overflow-hidden">
-      <HeroSection/>
-      <Carousel/>
-      <Explore/>
-      <FeaturedProducts/>
-      <ProductCategories/>
-      <About/>
-      <Delivery/>
-      <Footer/>
-    </div>
+    <main className="page-wrapper">
+      <HeroSection />
+      <TrustSection />
+      <CategorySection />
+      <FeaturedProducts />
+      <TestimonialsSection />
+      <CTASection />
+    </main>
   );
 }

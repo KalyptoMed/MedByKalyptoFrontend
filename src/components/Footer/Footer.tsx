@@ -1,84 +1,112 @@
+import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+
+const footerLinks = {
+  Company: [
+    { label: "About Us", href: "/about" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+  ],
+  Products: [
+    { label: "Antibiotics", href: "/products/all" },
+    { label: "Anti-Malarial", href: "/products/all" },
+    { label: "Vitamins", href: "/products/all" },
+    { label: "All Products", href: "/products/all" },
+  ],
+  Support: [
+    { label: "Help Center", href: "/help" },
+    { label: "Track Order", href: "/dashboard/user" },
+    { label: "Returns Policy", href: "/returns" },
+    { label: "Privacy Policy", href: "/privacy" },
+  ],
+};
+
+const socials = [
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+];
 
 export default function Footer() {
   return (
-    <div className="flex flex-row justify-around text-white bg-[#004D4A] py-6">
-      <div className="flex flex-col ">
-        <h2 className="font-extrabold text-white m-3">Contact Us</h2>
-        <p className="flex flex-row text-white mb-1">
-          <Image
-            src="/assets/Images/phone.png"
-            alt="phone"
-            width={20}
-            height={10}
-          />
-          <span className="ml-2">+2348144440000</span>
-        </p>
-        <p className="flex flex-row text-white mt-1 p-1">
-          <Image
-            src="/assets/Images/email.png"
-            alt="email"
-            width={25}
-            height={15}
-          />
-          <span className="ml-2">Medicartbykalypto@Gmail.Com</span>
-        </p>
-        <div className="flex flex-row bg-white rounded-full items-center justify-center px-3 mt-2 w-28">
-          <Image
-            src="/assets/Images/WhatsApp.png"
-            alt="WhatsApp"
-            width={25}
-            height={20}
-          />
-          <Image
-            src="/assets/Images/Instagram.png"
-            alt="Instagram"
-            width={25}
-            height={20}
-          />
-          <Image src="/assets/Images/FB.png" alt="FB" width={25} height={20} />
-          <Image src="/assets/Images/X.png" alt="X" width={25} height={20} />
-        </div>
-      </div>
+    <footer className="bg-[#003836] text-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/assets/images/logo_no bg 1.png"
+                alt="Medicart"
+                width={52}
+                height={38}
+                className="object-contain brightness-0 invert"
+              />
+              <span className="text-white font-extrabold text-xl">Medicart</span>
+            </div>
+            <p className="text-[#9BD0CC] leading-relaxed text-sm max-w-xs">
+              Nigeria&apos;s most trusted medical marketplace. Access verified medications and healthcare services from the comfort of your home.
+            </p>
+            <div className="flex items-center gap-3 mt-6">
+              {socials.map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#D0FF71] flex items-center justify-center transition-all duration-200 text-[#9BD0CC] hover:text-[#004D4A]"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
 
-      <div className="flex flex-col ">
-        <h2 className="font-extrabold mb-2 text-[24px] leading-[32px]">
-          Navigation
-        </h2>
-        <p className="flex flex-col items-center font-medium">Solution</p>
-        <p className="flex flex-col items-center font-medium">Products </p>
-        <p className="flex flex-col items-center font-medium">Resources </p>
-        <p className="flex flex-col items-center font-medium">Pricing </p>
-        <p className="flex flex-col items-center font-medium">More </p>
-      </div>
+          {/* Links */}
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4 className="text-[#D0FF71] font-bold mb-4 text-sm uppercase tracking-widest">{category}</h4>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href} className="text-[#9BD0CC] hover:text-white text-sm transition">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-      <div className="flex flex-col items-center mr-8">
-        <div className=" bg-white rounded-lg flex items-center justify-center p-2 w-36 h-24">
-          <Image
-            src="/assets/images/logo_no bg 1.png"
-            alt="logo"
-            width={125}
-            height={90}
-          />
+        {/* Contact Strip */}
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <div className="flex flex-wrap gap-6 text-sm text-[#9BD0CC]">
+            <a href="mailto:hello@medicart.ng" className="flex items-center gap-2 hover:text-white transition">
+              <Mail size={15} /> hello@medicart.ng
+            </a>
+            <a href="tel:+2348144440000" className="flex items-center gap-2 hover:text-white transition">
+              <Phone size={15} /> +234 814 444 0000
+            </a>
+            <span className="flex items-center gap-2">
+              <MapPin size={15} /> Lagos, Nigeria
+            </span>
+          </div>
         </div>
-        <div className="mt-4 w-full max-w-md">
-          <h2 className="mt-6 font-bold m-5 text-[20px] leading-[30px]">
-            Sign Up For New Products
-          </h2>
-        </div>
-        <p className="mt-4 rounded-lg text-left">
-          <input
-            type="email"
-            placeholder="Example@Gmail.Com"
-            className="flex rounded-lg py-1 px-20 text-left"
-          />
-        </p>
-        <div className="mt-4 flex flex-col items-center justify-center">
-          <p className="text-center bg-[#071443] rounded-md flex flex-col items-center justify-center p-4 w-36 h-8">
-            Subscribe
+
+        {/* Bottom */}
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#9BD0CC] text-sm">
+            © {new Date().getFullYear()} Medicart by Kalypto. All rights reserved.
           </p>
+          <div className="flex gap-4 text-xs text-[#9BD0CC]">
+            <Link href="/terms" className="hover:text-white transition">Terms</Link>
+            <Link href="/privacy" className="hover:text-white transition">Privacy</Link>
+            <Link href="/cookies" className="hover:text-white transition">Cookies</Link>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
