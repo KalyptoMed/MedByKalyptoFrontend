@@ -26,11 +26,11 @@ export default function ProductFilters({
   const hasFilters = selectedCategory !== "ALL" || sortBy !== "default" || showInStockOnly;
 
   return (
-    <div className="bg-white rounded-3xl p-6 shadow-card sticky top-24">
+    <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-card sticky top-24">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <SlidersHorizontal size={18} className="text-[#004D4A]" />
-          <h3 className="font-extrabold text-[#004D4A]">Filters</h3>
+          <SlidersHorizontal size={18} className="text-[#004D4A] dark:text-[#D0FF71]" />
+          <h3 className="font-extrabold text-[#004D4A] dark:text-white">Filters</h3>
         </div>
         {hasFilters && (
           <button
@@ -58,8 +58,8 @@ export default function ProductFilters({
               onClick={() => onSortChange(opt.value)}
               className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
                 sortBy === opt.value
-                  ? "bg-[#EBFFF5] text-[#004D4A]"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-[#004D4A]"
+                  ? "bg-[#EBFFF5] dark:bg-gray-800 text-[#004D4A] dark:text-[#D0FF71]"
+                  : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#004D4A] dark:hover:text-[#D0FF71]"
               }`}
             >
               {opt.label}
@@ -74,7 +74,7 @@ export default function ProductFilters({
           <div
             onClick={() => onInStockChange(!showInStockOnly)}
             className={`w-11 h-6 rounded-full transition-colors duration-200 relative flex-shrink-0 ${
-              showInStockOnly ? "bg-[#004D4A]" : "bg-gray-200"
+              showInStockOnly ? "bg-[#004D4A]" : "bg-gray-200 dark:bg-gray-700"
             }`}
           >
             <motion.div
@@ -83,7 +83,7 @@ export default function ProductFilters({
               className="absolute top-1 w-4 h-4 rounded-full bg-white shadow"
             />
           </div>
-          <span className="text-sm font-semibold text-gray-700">In Stock Only</span>
+          <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">In Stock Only</span>
         </label>
       </div>
 
@@ -96,7 +96,7 @@ export default function ProductFilters({
             className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
               selectedCategory === "ALL"
                 ? "bg-[#004D4A] text-[#D0FF71]"
-                : "text-gray-600 hover:bg-gray-50 hover:text-[#004D4A]"
+                : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#004D4A] dark:hover:text-[#D0FF71]"
             }`}
           >
             All Products
@@ -108,7 +108,7 @@ export default function ProductFilters({
               className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-semibold transition ${
                 selectedCategory === cat
                   ? "bg-[#004D4A] text-[#D0FF71]"
-                  : "text-gray-600 hover:bg-gray-50 hover:text-[#004D4A]"
+                  : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-[#004D4A] dark:hover:text-[#D0FF71]"
               }`}
             >
               {cat}

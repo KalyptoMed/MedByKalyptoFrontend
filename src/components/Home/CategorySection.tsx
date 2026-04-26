@@ -15,7 +15,7 @@ const categories = [
 
 export default function CategorySection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
         <motion.div
@@ -27,11 +27,11 @@ export default function CategorySection() {
         >
           <div>
             <p className="text-[#D0FF71] bg-[#004D4A] inline-block px-4 py-1 rounded-full text-sm font-bold mb-3">Categories</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#004D4A]">Browse by Category</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#004D4A] dark:text-white">Browse by Category</h2>
           </div>
           <Link
             href="/products/all"
-            className="hidden md:flex items-center gap-2 text-[#004D4A] font-bold hover:gap-3 transition-all"
+            className="hidden md:flex items-center gap-2 text-[#004D4A] dark:text-[#D0FF71] font-bold hover:gap-3 transition-all"
           >
             View all <ArrowRight size={18} />
           </Link>
@@ -51,12 +51,12 @@ export default function CategorySection() {
               >
                 <Link
                   href={cat.href}
-                  className="flex flex-col items-center gap-3 p-5 bg-white rounded-3xl border-2 border-gray-100 hover:border-[#004D4A] hover:shadow-card-hover transition-all duration-300 group text-center"
+                  className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-gray-800 rounded-3xl border-2 border-gray-100 dark:border-gray-700 hover:border-[#004D4A] dark:hover:border-[#D0FF71] hover:shadow-card-hover transition-all duration-300 group text-center"
                 >
                   <div className={`w-14 h-14 rounded-2xl ${cat.color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <Icon size={24} />
                   </div>
-                  <p className="font-bold text-[#004D4A] text-sm">{cat.name}</p>
+                  <p className="font-bold text-[#004D4A] dark:text-white text-sm">{cat.name}</p>
                   <p className="text-gray-400 text-xs">{cat.count}</p>
                 </Link>
               </motion.div>

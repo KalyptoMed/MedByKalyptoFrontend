@@ -13,7 +13,6 @@ export default function CartDrawer() {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -22,16 +21,15 @@ export default function CartDrawer() {
             className="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm"
           />
 
-          {/* Drawer */}
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 28, stiffness: 300 }}
-            className="fixed right-0 top-0 h-full w-full max-w-md bg-white z-50 flex flex-col shadow-2xl"
+            className="fixed right-0 top-0 h-full w-full max-w-md bg-white dark:bg-gray-900 z-50 flex flex-col shadow-2xl"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-brand-500 bg-[#004D4A]">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 dark:border-gray-800 bg-[#004D4A]">
               <div className="flex items-center gap-3">
                 <ShoppingCart className="text-[#D0FF71]" size={22} />
                 <h2 className="text-white font-bold text-lg">My Cart</h2>
@@ -57,11 +55,11 @@ export default function CartDrawer() {
                   animate={{ opacity: 1, y: 0 }}
                   className="flex flex-col items-center justify-center h-64 gap-4 text-center"
                 >
-                  <div className="w-20 h-20 rounded-full bg-[#EBFFF5] flex items-center justify-center">
-                    <ShoppingCart size={32} className="text-[#004D4A]" />
+                  <div className="w-20 h-20 rounded-full bg-[#EBFFF5] dark:bg-gray-800 flex items-center justify-center">
+                    <ShoppingCart size={32} className="text-[#004D4A] dark:text-[#D0FF71]" />
                   </div>
-                  <p className="text-gray-500 font-medium">Your cart is empty</p>
-                  <p className="text-gray-400 text-sm">Add some products to get started</p>
+                  <p className="text-gray-500 dark:text-gray-400 font-medium">Your cart is empty</p>
+                  <p className="text-gray-400 dark:text-gray-500 text-sm">Add some products to get started</p>
                   <Link
                     href="/products/all"
                     onClick={closeCart}
@@ -78,9 +76,9 @@ export default function CartDrawer() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
-                      className="flex gap-4 p-4 bg-gray-50 rounded-2xl"
+                      className="flex gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl"
                     >
-                      <div className="w-16 h-16 rounded-xl overflow-hidden bg-[#EBFFF5] flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl overflow-hidden bg-[#EBFFF5] dark:bg-gray-700 flex-shrink-0">
                         <Image
                           src={item.product.image as string}
                           alt={item.product.name}
@@ -90,22 +88,22 @@ export default function CartDrawer() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-bold text-[#004D4A] text-sm truncate">{item.product.name}</h4>
-                        <p className="text-gray-500 text-xs truncate">{item.product.description}</p>
-                        <p className="text-[#004D4A] font-bold mt-1">
+                        <h4 className="font-bold text-[#004D4A] dark:text-white text-sm truncate">{item.product.name}</h4>
+                        <p className="text-gray-500 dark:text-gray-400 text-xs truncate">{item.product.description}</p>
+                        <p className="text-[#004D4A] dark:text-[#D0FF71] font-bold mt-1">
                           ₦{(item.product.price * item.quantity).toLocaleString()}
                         </p>
                         <div className="flex items-center gap-2 mt-2">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 rounded-lg bg-white border border-gray-200 flex items-center justify-center hover:bg-[#EBFFF5] transition"
+                            className="w-7 h-7 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-[#EBFFF5] dark:hover:bg-gray-600 transition"
                           >
                             <Minus size={12} />
                           </button>
-                          <span className="text-sm font-semibold w-6 text-center">{item.quantity}</span>
+                          <span className="text-sm font-semibold w-6 text-center dark:text-gray-200">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 rounded-lg bg-white border border-gray-200 flex items-center justify-center hover:bg-[#EBFFF5] transition"
+                            className="w-7 h-7 rounded-lg bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-[#EBFFF5] dark:hover:bg-gray-600 transition"
                           >
                             <Plus size={12} />
                           </button>
@@ -125,10 +123,10 @@ export default function CartDrawer() {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="border-t border-gray-100 px-6 py-5 space-y-4">
+              <div className="border-t border-gray-100 dark:border-gray-800 px-6 py-5 space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600 font-medium">Subtotal</span>
-                  <span className="text-[#004D4A] font-bold text-xl">₦{totalPrice().toLocaleString()}</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-medium">Subtotal</span>
+                  <span className="text-[#004D4A] dark:text-[#D0FF71] font-bold text-xl">₦{totalPrice().toLocaleString()}</span>
                 </div>
                 <Link
                   href="/checkout"
@@ -139,7 +137,7 @@ export default function CartDrawer() {
                 </Link>
                 <button
                   onClick={closeCart}
-                  className="block w-full text-center text-[#004D4A] font-medium text-sm hover:underline"
+                  className="block w-full text-center text-[#004D4A] dark:text-[#9BD0CC] font-medium text-sm hover:underline"
                 >
                   Continue Shopping
                 </button>
