@@ -68,11 +68,11 @@ const config: Config = {
         "card-gradient": "linear-gradient(145deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
       },
       boxShadow: {
-        "brand": "0 4px 24px rgba(0, 77, 74, 0.25)",
-        "lime": "0 4px 24px rgba(208, 255, 113, 0.35)",
-        "card": "0 2px 20px rgba(0, 0, 0, 0.08)",
-        "card-hover": "0 8px 40px rgba(0, 0, 0, 0.16)",
-        "glass": "0 8px 32px rgba(0, 0, 0, 0.12)",
+        "brand": "0 2px 12px rgba(0, 77, 74, 0.12)",
+        "lime": "0 2px 12px rgba(208, 255, 113, 0.18)",
+        "card": "0 1px 8px rgba(0, 0, 0, 0.05)",
+        "card-hover": "0 4px 20px rgba(0, 0, 0, 0.09)",
+        "glass": "0 4px 16px rgba(0, 0, 0, 0.07)",
       },
       borderRadius: {
         "4xl": "2rem",

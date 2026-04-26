@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedinIcon, Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   Company: [
@@ -23,10 +23,10 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: FacebookIcon, href: "#", label: "Facebook" },
+  { icon: TwitterIcon, href: "#", label: "Twitter" },
+  { icon: InstagramIcon, href: "#", label: "Instagram" },
+  { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
 ];
 
 export default function Footer() {
@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/assets/images/logo_no bg 1.png"
@@ -49,7 +49,7 @@ export default function Footer() {
             <p className="text-[#9BD0CC] leading-relaxed text-sm max-w-xs">
               Nigeria&apos;s most trusted medical marketplace. Access verified medications and healthcare services from the comfort of your home.
             </p>
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center justify-center md:justify-start gap-3 mt-6">
               {socials.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <div key={category} className="flex flex-col items-center md:items-start text-center md:text-left">
               <h4 className="text-[#D0FF71] font-bold mb-4 text-sm uppercase tracking-widest">{category}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (
@@ -82,7 +82,7 @@ export default function Footer() {
 
         {/* Contact Strip */}
         <div className="border-t border-white/10 pt-8 mb-8">
-          <div className="flex flex-wrap gap-6 text-sm text-[#9BD0CC]">
+          <div className="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-[#9BD0CC]">
             <a href="mailto:hello@medicart.ng" className="flex items-center gap-2 hover:text-white transition">
               <Mail size={15} /> hello@medicart.ng
             </a>
@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p className="text-[#9BD0CC] text-sm">
             © {new Date().getFullYear()} Medicart by Kalypto. All rights reserved.
           </p>
