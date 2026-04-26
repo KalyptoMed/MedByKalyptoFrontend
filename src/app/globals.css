@@ -10,6 +10,12 @@
   --lime: #D0FF71;
   --mint: #EBFFF5;
   --foreground: #0D1B1E;
+  --background: #ffffff;
+}
+
+.dark {
+  --foreground: #e5e7eb;
+  --background: #030a09;
 }
 
 * {
@@ -23,9 +29,10 @@ html {
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--foreground);
-  background: #ffffff;
+  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar */

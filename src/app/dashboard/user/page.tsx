@@ -38,7 +38,7 @@ export default function UserDashboard() {
 
   if (!user) {
     return (
-      <main className="min-h-screen bg-[#F8FFFE] pt-20 flex items-center justify-center">
+      <main className="min-h-screen bg-[#F8FFFE] dark:bg-gray-950 pt-20 flex items-center justify-center">
         <div className="text-center">
           <p className="text-[#004D4A] font-bold text-xl mb-4">Please sign in to view your dashboard</p>
           <Link href="/auth/login" className="bg-[#004D4A] text-[#D0FF71] px-8 py-4 rounded-2xl font-bold">Sign In</Link>
@@ -50,7 +50,7 @@ export default function UserDashboard() {
   const savedProducts = allProducts.slice(0, 4);
 
   return (
-    <main className="min-h-screen bg-[#F8FFFE] pt-20 page-wrapper">
+    <main className="min-h-screen bg-[#F8FFFE] dark:bg-gray-950 pt-20 page-wrapper">
       {/* Header */}
       <div className="bg-[#004D4A] py-10 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-5">
@@ -69,20 +69,20 @@ export default function UserDashboard() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
           <div className="w-full lg:w-60 flex-shrink-0">
-            <div className="bg-white rounded-3xl p-4 shadow-card">
+            <div className="bg-white dark:bg-gray-900 rounded-3xl p-4 shadow-card">
               {navItems.map(({ id, label, icon: Icon }) => (
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-sm transition mb-1 ${
-                    activeTab === id ? "bg-[#004D4A] text-[#D0FF71]" : "text-gray-600 hover:bg-[#EBFFF5] hover:text-[#004D4A]"
+                    activeTab === id ? "bg-[#004D4A] text-[#D0FF71]" : "text-gray-600 dark:text-gray-300 hover:bg-[#EBFFF5] dark:hover:bg-gray-800 hover:text-[#004D4A] dark:hover:text-[#D0FF71]"
                   }`}
                 >
                   <Icon size={17} />
                   {label}
                 </button>
               ))}
-              <div className="mt-2 pt-2 border-t border-gray-100">
+              <div className="mt-2 pt-2 border-t border-gray-100 dark:border-gray-800">
                 <button
                   onClick={() => { logout(); router.push("/"); }}
                   className="w-full flex items-center gap-3 px-4 py-3 rounded-2xl font-semibold text-sm text-red-500 hover:bg-red-50 transition"
@@ -108,21 +108,21 @@ export default function UserDashboard() {
                   ].map((stat) => {
                     const Icon = stat.icon;
                     return (
-                      <div key={stat.label} className="bg-white rounded-2xl p-5 shadow-card">
+                      <div key={stat.label} className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-card">
                         <div className={`w-10 h-10 rounded-xl ${stat.color} flex items-center justify-center mb-3`}>
                           <Icon size={18} />
                         </div>
-                        <p className="text-2xl font-extrabold text-[#004D4A]">{stat.value}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{stat.label}</p>
+                        <p className="text-2xl font-extrabold text-[#004D4A] dark:text-white">{stat.value}</p>
+                        <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">{stat.label}</p>
                       </div>
                     );
                   })}
                 </div>
 
                 {/* Recent Orders */}
-                <div className="bg-white rounded-3xl p-6 shadow-card">
+                <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-card">
                   <div className="flex items-center justify-between mb-5">
-                    <h2 className="font-extrabold text-[#004D4A] text-lg">Recent Orders</h2>
+                    <h2 className="font-extrabold text-[#004D4A] dark:text-white text-lg">Recent Orders</h2>
                     <button onClick={() => setActiveTab("orders")} className="text-sm text-[#004D4A] font-semibold hover:underline flex items-center gap-1">
                       View all <ChevronRight size={14} />
                     </button>
@@ -132,7 +132,7 @@ export default function UserDashboard() {
                       const status = statusConfig[order.status];
                       const StatusIcon = status.icon;
                       return (
-                        <div key={order.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl">
+                        <div key={order.id} className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl">
                           <div className="w-10 h-10 rounded-xl bg-[#EBFFF5] flex items-center justify-center flex-shrink-0">
                             <Package size={18} className="text-[#004D4A]" />
                           </div>
@@ -154,14 +154,14 @@ export default function UserDashboard() {
 
             {/* ORDERS */}
             {activeTab === "orders" && (
-              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="bg-white rounded-3xl p-6 shadow-card">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-card">
                 <h2 className="font-extrabold text-[#004D4A] text-xl mb-6">My Orders</h2>
                 <div className="space-y-4">
                   {mockOrders.map((order) => {
                     const status = statusConfig[order.status];
                     const StatusIcon = status.icon;
                     return (
-                      <div key={order.id} className="border-2 border-gray-100 rounded-2xl p-5 hover:border-[#004D4A] transition">
+                      <div key={order.id} className="border-2 border-gray-100 dark:border-gray-800 rounded-2xl p-5 hover:border-[#004D4A] dark:hover:border-[#D0FF71] transition">
                         <div className="flex items-center justify-between mb-3">
                           <div>
                             <p className="font-extrabold text-[#004D4A]">{order.id}</p>
@@ -188,7 +188,7 @@ export default function UserDashboard() {
                 <h2 className="font-extrabold text-[#004D4A] text-xl mb-6">Saved Items</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {savedProducts.map((product) => (
-                    <div key={product.id} className="bg-white rounded-2xl p-4 shadow-card flex items-center gap-4">
+                    <div key={product.id} className="bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-card flex items-center gap-4">
                       <div className="w-16 h-16 rounded-xl bg-[#EBFFF5] flex items-center justify-center flex-shrink-0">
                         <Image src={product.image as string} alt={product.name} width={48} height={48} className="object-contain" />
                       </div>
@@ -208,7 +208,7 @@ export default function UserDashboard() {
 
             {/* PROFILE */}
             {activeTab === "profile" && (
-              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="bg-white rounded-3xl p-8 shadow-card">
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-card">
                 <h2 className="font-extrabold text-[#004D4A] text-xl mb-8">My Profile</h2>
                 <div className="flex items-center gap-5 mb-8 pb-8 border-b border-gray-100">
                   <div className="w-20 h-20 rounded-2xl bg-[#004D4A] flex items-center justify-center text-[#D0FF71] font-extrabold text-3xl">
@@ -227,7 +227,7 @@ export default function UserDashboard() {
                     { label: "Phone", value: "+234 800 000 0000" },
                     { label: "Member Since", value: "April 2026" },
                   ].map(({ label, value }) => (
-                    <div key={label} className="bg-[#F8FFFE] rounded-2xl p-4">
+                    <div key={label} className="bg-[#F8FFFE] dark:bg-gray-800 rounded-2xl p-4">
                       <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{label}</p>
                       <p className="text-[#004D4A] font-semibold">{value}</p>
                     </div>

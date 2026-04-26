@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Star, Heart, Share2, Minus, Plus, ShoppingCart, ArrowRight, ChevronRight, Tag, ShieldCheck } from "lucide-react";
 import { Product } from "@/types";
 import { useCartStore } from "@/store/cartStore";
+import { useToastStore } from "@/store/toastStore";
 import { allProducts } from "@/lib/products";
 import ProductGrid from "@/components/ProductListing/ProductGrid";
 
@@ -15,6 +16,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [activeTab, setActiveTab] = useState<"description" | "usage">("description");
   const { addItem } = useCartStore();
+  const { show } = useToastStore();
 
   const relatedProducts = allProducts
     .filter((p) => p.category === product.category && p.id !== product.id)
@@ -22,10 +24,11 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
   const handleAddToCart = () => {
     addItem(product, quantity);
+    show(`${product.name} added to cart`);
   };
 
   return (
-    <main className="min-h-screen bg-[#F8FFFE] pt-20 page-wrapper">
+    <main className="min-h-screen bg-[#F8FFFE] dark:bg-gray-950 pt-20 page-wrapper">
       {/* Breadcrumb */}
       <div className="bg-[#004D4A] py-4 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-sm">
@@ -81,7 +84,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             className="flex flex-col justify-center"
           >
             <p className="text-xs font-bold text-[#004D4A] uppercase tracking-widest opacity-50 mb-2">{product.category}</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#004D4A] leading-tight">{product.name}</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#004D4A] dark:text-white leading-tight">{product.name}</h1>
 
             {product.brand && (
               <p className="text-gray-500 mt-2">
@@ -106,7 +109,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
             {/* Price */}
             <div className="flex items-baseline gap-3 mt-6 pb-6 border-b border-gray-100">
-              <span className="text-4xl font-extrabold text-[#004D4A]">₦{product.price.toLocaleString()}</span>
+              <span className="text-4xl font-extrabold text-[#004D4A] dark:text-white">₦{product.price.toLocaleString()}</span>
               {product.originalPrice && (
                 <span className="text-xl text-gray-400 line-through">₦{product.originalPrice.toLocaleString()}</span>
               )}
@@ -117,7 +120,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               )}
             </div>
 
-            <p className="text-gray-500 mt-5 leading-relaxed">{product.description}</p>
+            <p className="text-gray-500 dark:text-gray-400 mt-5 leading-relaxed">{product.description}</p>
 
             {/* Quantity + CTA */}
             <div className="mt-6 flex flex-col gap-4">
@@ -170,7 +173,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
         {/* Description / Usage Tabs */}
         {(product.fullDescription || product.howToUse) && (
-          <div className="bg-white rounded-3xl p-8 shadow-card mb-16">
+          <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-card mb-16">
             <div className="flex gap-4 border-b border-gray-100 mb-6">
               {[
                 { key: "description" as const, label: "Description" },
@@ -205,7 +208,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div>
-            <h2 className="text-3xl font-extrabold text-[#004D4A] mb-8">Related Products</h2>
+            <h2 className="text-3xl font-extrabold text-[#004D4A] dark:text-white mb-8">Related Products</h2>
             <ProductGrid products={relatedProducts} />
           </div>
         )}

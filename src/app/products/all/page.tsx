@@ -62,7 +62,7 @@ export default function AllProductsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8FFFE] pt-20 page-wrapper">
+    <main className="min-h-screen bg-[#F8FFFE] dark:bg-gray-950 pt-20 page-wrapper">
       {/* Header Banner */}
       <div className="bg-[#004D4A] py-14 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#006B67] opacity-30 blur-[80px]" />
@@ -86,7 +86,7 @@ export default function AllProductsPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search medications, generics, categories..."
-              className="w-full pl-14 pr-12 py-4 bg-white rounded-2xl text-gray-800 font-medium text-base shadow-card focus:ring-2 focus:ring-[#D0FF71] focus:outline-none"
+              className="w-full pl-14 pr-12 py-4 bg-white dark:bg-gray-800 dark:text-gray-100 rounded-2xl text-gray-800 font-medium text-base shadow-card focus:ring-2 focus:ring-[#D0FF71] focus:outline-none"
             />
             {searchQuery && (
               <button
@@ -130,7 +130,7 @@ export default function AllProductsPage() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-10">
         {/* Mobile Filter Button */}
         <div className="flex items-center justify-between mb-6 lg:hidden">
-          <p className="text-[#004D4A] font-semibold">{filtered.length} products</p>
+          <p className="text-[#004D4A] dark:text-[#D0FF71] font-semibold">{filtered.length} products</p>
           <button
             onClick={() => setShowMobileFilters(!showMobileFilters)}
             className="flex items-center gap-2 bg-[#004D4A] text-[#D0FF71] px-4 py-2 rounded-xl font-bold text-sm"
@@ -156,7 +156,7 @@ export default function AllProductsPage() {
           {/* Products */}
           <div className="flex-1">
             <div className="hidden lg:flex items-center justify-between mb-6">
-              <p className="text-[#004D4A] font-semibold">
+              <p className="text-[#004D4A] dark:text-[#D0FF71] font-semibold">
                 {filtered.length} product{filtered.length !== 1 ? "s" : ""} found
               </p>
             </div>

@@ -46,7 +46,7 @@ function RegisterForm() {
   };
 
   const inputClass = (error?: { message?: string }) =>
-    `w-full px-4 py-3.5 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] ${error ? "border-red-300 bg-red-50" : "border-gray-200"}`;
+    `w-full px-4 py-3.5 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 ${error ? "border-red-300 bg-red-50" : "border-gray-200"}`;
 
   return (
     <main className="min-h-screen bg-[#004D4A] flex items-center justify-center px-4 py-16 relative overflow-hidden">
@@ -62,12 +62,12 @@ function RegisterForm() {
           <p className="text-[#9BD0CC]">Join thousands of satisfied users</p>
         </div>
 
-        <div className="bg-white rounded-[2rem] p-8 shadow-glass">
+        <div className="bg-white dark:bg-gray-900 rounded-[2rem] p-8 shadow-glass">
           <h1 className="text-2xl font-extrabold text-[#004D4A] mb-1">Create Account</h1>
           <p className="text-gray-500 text-sm mb-6">Tell us about yourself to get started</p>
 
           {/* Role Toggle */}
-          <div className="grid grid-cols-2 gap-3 mb-7 p-1 bg-gray-100 rounded-2xl">
+          <div className="grid grid-cols-2 gap-3 mb-7 p-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
             {[
               { value: "user" as const, label: "Customer", icon: User, desc: "Buy medications" },
               { value: "vendor" as const, label: "Vendor", icon: Store, desc: "Sell products" },

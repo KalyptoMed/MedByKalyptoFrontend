@@ -15,6 +15,7 @@
     "lucide-react": "^0.544.0",
     "medbykalyptofrontend": "file:",
     "next": "14.2.13",
+    "next-themes": "^0.4.6",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.73.1",

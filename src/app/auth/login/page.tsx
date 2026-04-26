@@ -66,9 +66,9 @@ export default function LoginPage() {
           <p className="text-[#9BD0CC]">Welcome back</p>
         </div>
 
-        <div className="bg-white rounded-[2rem] p-8 shadow-glass">
-          <h1 className="text-2xl font-extrabold text-[#004D4A] mb-1">Sign In</h1>
-          <p className="text-gray-500 text-sm mb-8">Enter your credentials to access your account</p>
+        <div className="bg-white dark:bg-gray-900 rounded-[2rem] p-8 shadow-glass">
+          <h1 className="text-2xl font-extrabold text-[#004D4A] dark:text-white mb-1">Sign In</h1>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">Enter your credentials to access your account</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
@@ -77,7 +77,7 @@ export default function LoginPage() {
                 {...register("email")}
                 type="email"
                 placeholder="you@example.com"
-                className={`w-full px-4 py-3.5 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] ${errors.email ? "border-red-300 bg-red-50" : "border-gray-200"}`}
+                className={`w-full px-4 py-3.5 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 ${errors.email ? "border-red-300 bg-red-50" : "border-gray-200"}`}
               />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             </div>
@@ -89,7 +89,7 @@ export default function LoginPage() {
                   {...register("password")}
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  className={`w-full px-4 py-3.5 pr-12 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] ${errors.password ? "border-red-300 bg-red-50" : "border-gray-200"}`}
+                  className={`w-full px-4 py-3.5 pr-12 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 ${errors.password ? "border-red-300 bg-red-50" : "border-gray-200"}`}
                 />
                 <button
                   type="button"
@@ -119,7 +119,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
             Don&apos;t have an account?{" "}
             <Link href="/auth/register" className="text-[#004D4A] font-bold hover:underline">Create one</Link>
           </p>

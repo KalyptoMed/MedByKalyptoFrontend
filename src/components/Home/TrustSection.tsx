@@ -32,7 +32,7 @@ const features = [
 
 export default function TrustSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, i) => {
@@ -44,14 +44,14 @@ export default function TrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex flex-col items-start gap-4 p-6 rounded-3xl border-2 border-gray-100 hover:border-[#004D4A] hover:shadow-card transition-all duration-300"
+                className="flex flex-col items-start gap-4 p-6 rounded-3xl border-2 border-gray-100 dark:border-gray-800 hover:border-[#004D4A] dark:hover:border-[#D0FF71] hover:shadow-card transition-all duration-300"
               >
                 <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center`}>
                   <Icon size={26} />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-[#004D4A] text-lg">{feature.title}</h3>
-                  <p className="text-gray-500 text-sm mt-1 leading-relaxed">{feature.desc}</p>
+                  <h3 className="font-extrabold text-[#004D4A] dark:text-white text-lg">{feature.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 leading-relaxed">{feature.desc}</p>
                 </div>
               </motion.div>
             );
