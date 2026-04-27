@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ShieldCheck, Truck, HeadphonesIcon, RotateCcw } from "lucide-react";
 
 const features = [
@@ -30,28 +30,59 @@ const features = [
   },
 ];
 
+const cardVariants = (i: number): Variants => ({
+  hidden: { opacity: 0, x: i % 2 === 0 ? -40 : 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { type: "spring", stiffness: 240, damping: 22, delay: i * 0.1 },
+  },
+});
+
+const iconVariants: Variants = {
+  hidden: { scale: 0, rotate: 30 },
+  visible: {
+    scale: 1,
+    rotate: 0,
+    transition: { type: "spring", stiffness: 350, damping: 16, delay: 0.15 },
+  },
+};
+
 export default function TrustSection() {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex flex-col items-start gap-4 p-6 rounded-3xl border-2 border-gray-100 dark:border-gray-800 hover:border-[#004D4A] dark:hover:border-[#D0FF71] hover:shadow-card transition-all duration-300"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-20px" }}
+                variants={cardVariants(i)}
+                whileTap={{ scale: 0.96 }}
+                className="flex flex-col items-start gap-2 md:gap-3 p-3 md:p-6 rounded-2xl md:rounded-3xl border-2 border-gray-100 dark:border-gray-800 hover:border-[#004D4A] dark:hover:border-[#D0FF71] hover:shadow-card transition-all duration-300 cursor-default"
               >
-                <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center`}>
-                  <Icon size={26} />
-                </div>
+                <motion.div
+                  variants={iconVariants}
+                  className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl ${feature.color} flex items-center justify-center`}
+                >
+                  <Icon size={20} />
+                </motion.div>
                 <div>
-                  <h3 className="font-extrabold text-[#004D4A] dark:text-white text-lg">{feature.title}</h3>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 leading-relaxed">{feature.desc}</p>
+                  <h3 className="font-extrabold text-[#004D4A] dark:text-white text-sm md:text-lg">{feature.title}</h3>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 + 0.25 }}
+                    className="text-gray-500 dark:text-gray-400 text-xs md:text-sm mt-1 leading-relaxed"
+                  >
+                    {feature.desc}
+                  </motion.p>
                 </div>
               </motion.div>
             );
