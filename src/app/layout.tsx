@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ToastContainer from "@/components/ui/Toast";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Medicart — Nigeria's #1 Medical Marketplace",
@@ -32,12 +33,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="antialiased">
-        <ThemeProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <ToastContainer />
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <ToastContainer />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

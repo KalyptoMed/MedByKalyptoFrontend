@@ -5,12 +5,12 @@ import Link from "next/link";
 import { Pill, Syringe, Heart, Leaf, FlaskConical, Apple, ArrowRight } from "lucide-react";
 
 const categories = [
-  { name: "Antibiotics", icon: Pill, color: "bg-blue-50 text-blue-600", href: "/products/all?category=ANTIBIOTICS", count: "120+ items" },
-  { name: "Anti-Malarial", icon: Syringe, color: "bg-red-50 text-red-500", href: "/products/all?category=ANTI-MALARIAL", count: "45+ items" },
-  { name: "Anti-Diabetics", icon: Heart, color: "bg-pink-50 text-pink-500", href: "/products/all?category=ANTI-DIABETICS", count: "60+ items" },
-  { name: "Antacids", icon: FlaskConical, color: "bg-purple-50 text-purple-500", href: "/products/all?category=ANTACIDS", count: "38+ items" },
-  { name: "Anti-Diarrhoeal", icon: Leaf, color: "bg-green-50 text-green-600", href: "/products/all?category=ANTI-DIARRHOEAL", count: "25+ items" },
-  { name: "Vitamins", icon: Apple, color: "bg-yellow-50 text-yellow-600", href: "/products/all?category=VITAMINS", count: "80+ items" },
+  { name: "Antibiotics", icon: Pill, color: "bg-blue-50 text-blue-600", href: "/products/all?category=Antibiotics" },
+  { name: "Anti-Malarial", icon: Syringe, color: "bg-red-50 text-red-500", href: "/products/all?category=Anti-Malarial" },
+  { name: "Anti-Diabetics", icon: Heart, color: "bg-pink-50 text-pink-500", href: "/products/all?category=Anti-Diabetics" },
+  { name: "Antacids", icon: FlaskConical, color: "bg-purple-50 text-purple-500", href: "/products/all?category=Antacids" },
+  { name: "Anti-Diarrhoeal", icon: Leaf, color: "bg-green-50 text-green-600", href: "/products/all?category=Anti-Diarrhoeal" },
+  { name: "Vitamins", icon: Apple, color: "bg-yellow-50 text-yellow-600", href: "/products/all?category=Vitamins" },
 ];
 
 const cardVariants = (i: number): Variants => ({
@@ -89,15 +89,6 @@ export default function CategorySection() {
                     <Icon size={18} />
                   </motion.div>
                   <p className="font-bold text-[#004D4A] dark:text-white text-sm">{cat.name}</p>
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.07 + 0.2 }}
-                    className="text-gray-400 text-xs"
-                  >
-                    {cat.count}
-                  </motion.p>
                 </Link>
               </motion.div>
             );

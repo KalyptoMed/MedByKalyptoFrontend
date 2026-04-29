@@ -1,14 +1,14 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eye, EyeOff, ShieldCheck, ArrowRight } from "lucide-react";
-import { useAuthStore } from "@/store/authStore";
+import { useLogin } from "@/hooks/auth.hooks";
 
 const loginSchema = z.object({
   email: z.string().email("Valid email required"),
@@ -18,46 +18,24 @@ const loginSchema = z.object({
 type LoginData = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect") ?? undefined;
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const { login } = useAuthStore();
+  const { mutate: login, isPending } = useLogin({ redirectTo });
 
   const { register, handleSubmit, formState: { errors } } = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = async (data: LoginData) => {
-    setIsLoading(true);
-    // Simulate API call — replace with real auth
-    await new Promise((r) => setTimeout(r, 1200));
-
-    // Mock login — determine role by email
-    const role = data.email.includes("vendor") ? "vendor" : "user";
-    login({
-      id: "1",
-      name: role === "vendor" ? "Vendor User" : "John Doe",
-      email: data.email,
-      role,
-    });
-
-    router.push(role === "vendor" ? "/dashboard/vendor" : "/dashboard/user");
-  };
+  const onSubmit = (data: LoginData) => login(data);
 
   return (
     <main className="min-h-screen bg-[#004D4A] flex items-center justify-center px-4 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#006B67] opacity-40 blur-[100px]" />
       <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#D0FF71] opacity-5 blur-[80px]" />
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative w-full max-w-md"
-      >
-        {/* Logo */}
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="relative w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
             <ShieldCheck size={32} className="text-[#D0FF71]" />
@@ -68,7 +46,7 @@ export default function LoginPage() {
 
         <div className="bg-white dark:bg-gray-900 rounded-[2rem] p-8 shadow-glass">
           <h1 className="text-2xl font-extrabold text-[#004D4A] dark:text-white mb-1">Sign In</h1>
-          <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">Enter your credentials to access your account</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">Enter your credentials to continue</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
@@ -91,11 +69,7 @@ export default function LoginPage() {
                   placeholder="••••••••"
                   className={`w-full px-4 py-3.5 pr-12 rounded-xl border-2 text-sm font-medium transition focus:outline-none focus:border-[#004D4A] dark:bg-gray-800 dark:text-gray-100 dark:border-gray-700 ${errors.password ? "border-red-300 bg-red-50" : "border-gray-200"}`}
                 />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#004D4A] transition"
-                >
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#004D4A] transition">
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
@@ -106,16 +80,9 @@ export default function LoginPage() {
               <Link href="#" className="text-sm text-[#004D4A] font-semibold hover:underline">Forgot password?</Link>
             </div>
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-[#004D4A] text-[#D0FF71] py-4 rounded-xl font-bold text-base hover:bg-[#006B67] transition shadow-brand flex items-center justify-center gap-2 disabled:opacity-70"
-            >
-              {isLoading ? (
-                <span className="w-5 h-5 border-2 border-[#D0FF71]/40 border-t-[#D0FF71] rounded-full animate-spin" />
-              ) : (
-                <>Sign In <ArrowRight size={18} /></>
-              )}
+            <button type="submit" disabled={isPending}
+              className="w-full bg-[#004D4A] text-[#D0FF71] py-4 rounded-xl font-bold text-base hover:bg-[#006B67] transition shadow-brand flex items-center justify-center gap-2 disabled:opacity-70">
+              {isPending ? <span className="w-5 h-5 border-2 border-[#D0FF71]/40 border-t-[#D0FF71] rounded-full animate-spin" /> : <>Sign In <ArrowRight size={18} /></>}
             </button>
           </form>
 
@@ -124,11 +91,6 @@ export default function LoginPage() {
             <Link href="/auth/register" className="text-[#004D4A] font-bold hover:underline">Create one</Link>
           </p>
         </div>
-
-        <p className="text-center text-[#9BD0CC] text-xs mt-6">
-          By continuing, you agree to our{" "}
-          <Link href="#" className="underline hover:text-white">Terms of Service</Link>
-        </p>
       </motion.div>
     </main>
   );

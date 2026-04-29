@@ -1,27 +1,24 @@
-"use client";
+﻿"use client";
 
 import { useState, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eye, EyeOff, ShieldCheck, User, Store, ArrowRight } from "lucide-react";
-import { useAuthStore } from "@/store/authStore";
+import { useRegister } from "@/hooks/auth.hooks";
 
 const registerSchema = z.object({
   name: z.string().min(2, "Full name required"),
   email: z.string().email("Valid email required"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  password: z.string().min(8, "Minimum 8 characters"),
   confirmPassword: z.string(),
-  phone: z.string().min(10, "Valid phone number required"),
+  phone: z.string().min(10, "Valid phone required"),
   businessName: z.string().optional(),
   agreeTerms: z.boolean().refine((v) => v === true, "You must agree to the terms"),
-}).refine((d) => d.password === d.confirmPassword, {
-  message: "Passwords do not match",
-  path: ["confirmPassword"],
-});
+}).refine((d) => d.password === d.confirmPassword, { message: "Passwords do not match", path: ["confirmPassword"] });
 
 type RegisterData = z.infer<typeof registerSchema>;
 
@@ -30,19 +27,16 @@ function RegisterForm() {
   const defaultRole = searchParams.get("role") === "vendor" ? "vendor" : "user";
   const [role, setRole] = useState<"user" | "vendor">(defaultRole);
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const { login } = useAuthStore();
+  const { mutate: registerUser, isPending } = useRegister();
 
   const { register, handleSubmit, formState: { errors } } = useForm<RegisterData>({
     resolver: zodResolver(registerSchema),
   });
 
-  const onSubmit = async (data: RegisterData) => {
-    setIsLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    login({ id: "1", name: data.name, email: data.email, role });
-    router.push(role === "vendor" ? "/dashboard/vendor" : "/dashboard/user");
+  const onSubmit = (data: RegisterData) => {
+    const [firstName, ...rest] = data.name.trim().split(" ");
+    const lastName = rest.join(" ") || firstName;
+    registerUser({ firstName, lastName, email: data.email, password: data.password, role, phone: data.phone });
   };
 
   const inputClass = (error?: { message?: string }) =>
@@ -66,20 +60,13 @@ function RegisterForm() {
           <h1 className="text-2xl font-extrabold text-[#004D4A] mb-1">Create Account</h1>
           <p className="text-gray-500 text-sm mb-6">Tell us about yourself to get started</p>
 
-          {/* Role Toggle */}
           <div className="grid grid-cols-2 gap-3 mb-7 p-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
             {[
               { value: "user" as const, label: "Customer", icon: User, desc: "Buy medications" },
               { value: "vendor" as const, label: "Vendor", icon: Store, desc: "Sell products" },
             ].map(({ value, label, icon: Icon, desc }) => (
-              <button
-                key={value}
-                onClick={() => setRole(value)}
-                type="button"
-                className={`flex flex-col items-center gap-1 py-3 px-4 rounded-xl font-bold text-sm transition ${
-                  role === value ? "bg-[#004D4A] text-[#D0FF71] shadow" : "text-gray-500 hover:text-[#004D4A]"
-                }`}
-              >
+              <button key={value} onClick={() => setRole(value)} type="button"
+                className={`flex flex-col items-center gap-1 py-3 px-4 rounded-xl font-bold text-sm transition ${role === value ? "bg-[#004D4A] text-[#D0FF71] shadow" : "text-gray-500 hover:text-[#004D4A]"}`}>
                 <Icon size={18} />
                 {label}
                 <span className={`text-[10px] font-normal ${role === value ? "text-[#9BD0CC]" : "text-gray-400"}`}>{desc}</span>
@@ -136,24 +123,14 @@ function RegisterForm() {
             <label className="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" {...register("agreeTerms")} className="mt-0.5 w-4 h-4 accent-[#004D4A] flex-shrink-0" />
               <span className="text-sm text-gray-500">
-                I agree to the{" "}
-                <Link href="#" className="text-[#004D4A] font-semibold hover:underline">Terms of Service</Link>
-                {" "}and{" "}
-                <Link href="#" className="text-[#004D4A] font-semibold hover:underline">Privacy Policy</Link>
+                I agree to the{" "}<Link href="#" className="text-[#004D4A] font-semibold hover:underline">Terms of Service</Link>{" "}and{" "}<Link href="#" className="text-[#004D4A] font-semibold hover:underline">Privacy Policy</Link>
               </span>
             </label>
             {errors.agreeTerms && <p className="text-red-500 text-xs">{errors.agreeTerms.message}</p>}
 
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-[#004D4A] text-[#D0FF71] py-4 rounded-xl font-bold text-base hover:bg-[#006B67] transition shadow-brand flex items-center justify-center gap-2 disabled:opacity-70"
-            >
-              {isLoading ? (
-                <span className="w-5 h-5 border-2 border-[#D0FF71]/40 border-t-[#D0FF71] rounded-full animate-spin" />
-              ) : (
-                <>Create Account <ArrowRight size={18} /></>
-              )}
+            <button type="submit" disabled={isPending}
+              className="w-full bg-[#004D4A] text-[#D0FF71] py-4 rounded-xl font-bold text-base hover:bg-[#006B67] transition shadow-brand flex items-center justify-center gap-2 disabled:opacity-70">
+              {isPending ? <span className="w-5 h-5 border-2 border-[#D0FF71]/40 border-t-[#D0FF71] rounded-full animate-spin" /> : <>Create Account <ArrowRight size={18} /></>}
             </button>
           </form>
 
@@ -168,9 +145,5 @@ function RegisterForm() {
 }
 
 export default function RegisterPage() {
-  return (
-    <Suspense>
-      <RegisterForm />
-    </Suspense>
-  );
+  return <Suspense><RegisterForm /></Suspense>;
 }

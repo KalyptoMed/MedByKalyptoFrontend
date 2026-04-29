@@ -38,7 +38,11 @@ export default function Navbar() {
     setIsUserMenuOpen(false);
   }, [pathname]);
 
-  const cartCount = totalItems();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const cartCount = mounted ? totalItems() : 0;
+  const authReady = mounted && isAuthenticated;
 
   return (
     <>
@@ -57,9 +61,9 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <Image
               src="/assets/images/logo_no bg 1.png"
+              width={44}
               alt="Medicart"
-              width={60}
-              height={44}
+              height={32}
               className="object-contain"
             />
           </Link>
@@ -113,16 +117,16 @@ export default function Navbar() {
             </button>
 
             {/* Auth */}
-            {isAuthenticated && user ? (
+            {authReady && user ? (
               <div className="relative hidden md:block">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-[#EBFFF5] dark:hover:bg-gray-800 transition"
                 >
                   <div className="w-8 h-8 rounded-full bg-[#004D4A] flex items-center justify-center text-[#D0FF71] font-bold text-sm">
-                    {user.name.charAt(0).toUpperCase()}
+                    {(user.firstName ?? "U").charAt(0).toUpperCase()}
                   </div>
-                  <span className="text-[#004D4A] dark:text-[#D0FF71] font-semibold text-sm">{user.name.split(" ")[0]}</span>
+                  <span className="text-[#004D4A] dark:text-[#D0FF71] font-semibold text-sm">{user.firstName}</span>
                   <ChevronDown size={14} className={`text-gray-400 transition-transform ${isUserMenuOpen ? "rotate-180" : ""}`} />
                 </button>
 
@@ -135,7 +139,7 @@ export default function Navbar() {
                       className="absolute right-0 top-full mt-2 w-52 bg-white dark:bg-gray-900 rounded-2xl shadow-card-hover border border-gray-100 dark:border-gray-800 overflow-hidden"
                     >
                       <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-800">
-                        <p className="font-bold text-[#004D4A] dark:text-[#D0FF71] text-sm">{user.name}</p>
+                        <p className="font-bold text-[#004D4A] dark:text-[#D0FF71] text-sm">{user.firstName} {user.lastName}</p>
                         <p className="text-gray-400 dark:text-gray-500 text-xs">{user.email}</p>
                       </div>
                       <Link
@@ -207,7 +211,7 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-3 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-2">
-                  {isAuthenticated ? (
+                  {authReady ? (
                     <>
                       <Link href={user?.role === "vendor" ? "/dashboard/vendor" : "/dashboard/user"}
                         className="flex items-center gap-2 px-4 py-3 bg-[#EBFFF5] dark:bg-gray-800 text-[#004D4A] dark:text-[#D0FF71] font-semibold rounded-xl"
