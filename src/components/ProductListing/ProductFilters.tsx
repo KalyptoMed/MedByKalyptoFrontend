@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { X, SlidersHorizontal } from "lucide-react";
-import { categories } from "@/lib/products";
 
 interface FilterProps {
+  categories: string[];
   selectedCategory: string;
   onCategoryChange: (cat: string) => void;
   sortBy: string;
@@ -15,6 +15,7 @@ interface FilterProps {
 }
 
 export default function ProductFilters({
+  categories,
   selectedCategory,
   onCategoryChange,
   sortBy,
