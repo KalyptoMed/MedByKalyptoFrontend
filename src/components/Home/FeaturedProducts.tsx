@@ -82,6 +82,15 @@ export default function FeaturedProducts() {
         </motion.div>
 
         {/* Grid */}
+        {!isLoading && products.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-24 gap-4">
+            <div className="w-20 h-20 rounded-full bg-[#EBFFF5] dark:bg-gray-800 flex items-center justify-center">
+              <ShoppingBag size={32} className="text-[#004D4A] dark:text-[#D0FF71]" />
+            </div>
+            <p className="text-[#004D4A] dark:text-white font-bold text-xl">No products available</p>
+            <p className="text-gray-400 text-sm">Check back soon for new arrivals</p>
+          </div>
+        ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {isLoading
             ? [...Array(5)].map((_, i) => <SkeletonCard key={i} />)
@@ -200,6 +209,7 @@ export default function FeaturedProducts() {
                 </motion.div>
               ))}
         </div>
+        )}
 
         {/* Mobile view-all */}
         <motion.div
