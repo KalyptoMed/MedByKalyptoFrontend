@@ -9,12 +9,10 @@ export default function AdminAnalyticsPage() {
   const { data: ordersData, isLoading: oLoading } = useAdminOrders(1, 100);
   const { data: usersData, isLoading: uLoading } = useAdminUsers(1, 1);
   const { data: vendorsData, isLoading: vLoading } = useAdminVendors(1, 1);
-  const { data: productsData, isLoading: pLoading } = useAdminProducts(1, 1);
+  useAdminProducts(1, 1);
 
   const orders = ordersData?.items ?? [];
   const totalRevenue = orders.reduce((sum, o) => sum + Number(o.total), 0);
-  const deliveredOrders = orders.filter((o) => o.status === "delivered");
-  const deliveredRevenue = deliveredOrders.reduce((sum, o) => sum + Number(o.total), 0);
 
   // Group orders by month for chart
   const monthMap: Record<string, number> = {};

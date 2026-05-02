@@ -22,7 +22,7 @@ export default function AdminOverviewPage() {
   const { data: ordersData, isLoading: oLoading } = useAdminOrders(1, 10);
 
   const vendors = vendorsData?.items ?? [];
-  const pendingVendors = vendors.filter((v) => v.status === "pending");
+  const pendingVendors = vendors.filter((v) => v.profile?.status === "pending");
   const recentOrders = ordersData?.items ?? [];
 
   const orderCols = [
@@ -48,7 +48,7 @@ export default function AdminOverviewPage() {
     <div className="space-y-6">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard title="Total Users" value={uLoading ? "..." : String(usersData?.total ?? 0)} change="Registered" positive icon={Users} color="bg-blue-50 text-blue-600" delay={0} />
-        <StatCard title="Active Vendors" value={vLoading ? "..." : String(vendors.filter((v) => v.status === "approved").length)} change="Approved" positive icon={Store} color="bg-purple-50 text-purple-600" delay={0.06} />
+        <StatCard title="Active Vendors" value={vLoading ? "..." : String(vendors.filter((v) => v.profile?.status === "approved").length)} change="Approved" positive icon={Store} color="bg-purple-50 text-purple-600" delay={0.06} />
         <StatCard title="Total Orders" value={oLoading ? "..." : String(ordersData?.total ?? 0)} change="All time" positive icon={Package} color="bg-[#004D4A]/10 text-[#004D4A]" delay={0.12} />
         <StatCard title="Pending Vendors" value={vLoading ? "..." : String(pendingVendors.length)} icon={TrendingUp} color="bg-yellow-50 text-yellow-600" delay={0.18} />
       </div>

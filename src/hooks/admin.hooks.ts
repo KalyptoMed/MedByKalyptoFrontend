@@ -2,7 +2,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import apiClient from "@/lib/apiClient";
 import type { AuthUser } from "@/store/authStore";
 import { useToastStore } from "@/store/toastStore";
-import type { VendorProfile } from "./vendor.hooks";
 import type { PaginatedOrders } from "./order.hooks";
 import type { PaginatedProducts } from "./product.hooks";
 
