@@ -18,6 +18,7 @@ import { usePaystackPayment } from "react-paystack";
 import { CartItem } from "@/types";
 import { useCreateOrder, useUploadEvidence } from "@/hooks/order.hooks";
 import { useAddresses, useAddAddress } from "@/hooks/user.hooks";
+import { useVendorById } from "@/hooks/vendor.hooks";
 import { Upload, Clock, AlertTriangle, Building2 } from "lucide-react";
 
 const deliverySchema = z
@@ -68,6 +69,10 @@ export default function CheckoutClient() {
   const { mutate: uploadEvidence, isPending: uploadingEvidence } = useUploadEvidence();
   const { data: addresses } = useAddresses();
   const { mutate: addAddress } = useAddAddress();
+
+  const vendorId = (items[0]?.product as any)?.vendorId as string | undefined;
+  const { data: vendor } = useVendorById(vendorId);
+  const vendorBankAccount = vendor?.bankAccount?.accountNumber ? vendor.bankAccount : null;
 
   useEffect(() => setMounted(true), []);
 
@@ -426,28 +431,30 @@ export default function CheckoutClient() {
                         </div>
                       </label>
 
-                      {/* Bank Transfer */}
-                      <label
-                        className={`flex items-center gap-4 p-4 rounded-2xl border-2 cursor-pointer transition ${
-                          selectedPayment === "bank_transfer" ? "border-[#004D4A] bg-[#EBFFF5]" : "border-gray-200 hover:border-gray-300"
-                        }`}
-                      >
-                        <input type="radio" className="sr-only" checked={selectedPayment === "bank_transfer"} onChange={() => setSelectedPayment("bank_transfer")} />
-                        <div className="w-12 h-8 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Building2 size={18} className="text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-bold text-[#004D4A]">Pay to Vendor Account</p>
-                          <p className="text-gray-400 text-xs mt-0.5">Direct bank transfer — requires evidence upload</p>
-                        </div>
-                        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${selectedPayment === "bank_transfer" ? "border-[#004D4A]" : "border-gray-300"}`}>
-                          {selectedPayment === "bank_transfer" && <div className="w-2.5 h-2.5 rounded-full bg-[#004D4A]" />}
-                        </div>
-                      </label>
+                      {/* Bank Transfer — only shown when vendor has bank account set up */}
+                      {vendorBankAccount && (
+                        <label
+                          className={`flex items-center gap-4 p-4 rounded-2xl border-2 cursor-pointer transition ${
+                            selectedPayment === "bank_transfer" ? "border-[#004D4A] bg-[#EBFFF5]" : "border-gray-200 hover:border-gray-300"
+                          }`}
+                        >
+                          <input type="radio" className="sr-only" checked={selectedPayment === "bank_transfer"} onChange={() => setSelectedPayment("bank_transfer")} />
+                          <div className="w-12 h-8 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <Building2 size={18} className="text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-bold text-[#004D4A]">Pay to Vendor Account</p>
+                            <p className="text-gray-400 text-xs mt-0.5">Direct bank transfer — requires evidence upload</p>
+                          </div>
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${selectedPayment === "bank_transfer" ? "border-[#004D4A]" : "border-gray-300"}`}>
+                            {selectedPayment === "bank_transfer" && <div className="w-2.5 h-2.5 rounded-full bg-[#004D4A]" />}
+                          </div>
+                        </label>
+                      )}
                     </div>
 
                     {/* Bank transfer details */}
-                    {selectedPayment === "bank_transfer" && (
+                    {selectedPayment === "bank_transfer" && vendorBankAccount && (
                       <motion.div
                         initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -463,14 +470,14 @@ export default function CheckoutClient() {
                           <p className="text-xs font-bold text-[#004D4A] uppercase tracking-widest mb-3">Vendor Bank Details</p>
                           <div className="space-y-2">
                             {[
-                              { label: "Bank", value: "GTBank" },
-                              { label: "Account Name", value: "Medicart Business" },
-                              { label: "Account Number", value: "0123456789" },
+                              { label: "Bank", value: vendorBankAccount.bankName },
+                              { label: "Account Name", value: vendorBankAccount.accountName },
+                              { label: "Account Number", value: vendorBankAccount.accountNumber },
                               { label: "Amount", value: `₦${total.toLocaleString()}` },
                             ].map(({ label, value }) => (
                               <div key={label} className="flex justify-between text-sm">
                                 <span className="text-gray-500">{label}</span>
-                                <span className="font-bold text-[#004D4A]">{value}</span>
+                                <span className="font-bold text-[#004D4A] font-mono">{value}</span>
                               </div>
                             ))}
                           </div>
@@ -499,19 +506,19 @@ export default function CheckoutClient() {
                       <button onClick={() => setStep(1)} className="flex-1 py-4 border-2 border-gray-200 rounded-2xl font-bold text-gray-600 hover:border-[#004D4A] hover:text-[#004D4A] transition">
                         Back
                       </button>
-                      {selectedPayment === "paystack" ? (
-                        <button
-                          onClick={() => initializePayment({ onSuccess: onPaystackSuccess, onClose: () => {} })}
-                          className="flex-1 bg-[#004D4A] text-[#D0FF71] py-4 rounded-2xl font-bold hover:bg-[#006B67] transition shadow-brand"
-                        >
-                          Pay ₦{total.toLocaleString()}
-                        </button>
-                      ) : (
+                      {selectedPayment === "bank_transfer" && vendorBankAccount ? (
                         <button
                           onClick={handleBankTransferOrder}
                           className="flex-1 bg-[#004D4A] text-[#D0FF71] py-4 rounded-2xl font-bold hover:bg-[#006B67] transition shadow-brand flex items-center justify-center gap-2"
                         >
                           I have made this transfer <ChevronRight size={18} />
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => initializePayment({ onSuccess: onPaystackSuccess, onClose: () => {} })}
+                          className="flex-1 bg-[#004D4A] text-[#D0FF71] py-4 rounded-2xl font-bold hover:bg-[#006B67] transition shadow-brand"
+                        >
+                          Pay ₦{total.toLocaleString()}
                         </button>
                       )}
                     </div>
