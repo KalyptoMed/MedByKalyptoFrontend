@@ -3,6 +3,12 @@ import apiClient from "@/lib/apiClient";
 import { useAuthStore } from "@/store/authStore";
 import { useToastStore } from "@/store/toastStore";
 
+export interface BankAccount {
+  bankName: string;
+  accountName: string;
+  accountNumber: string;
+}
+
 export interface VendorProfile {
   _id: string;
   userId: string | { _id: string; firstName: string; lastName: string; email: string; phone?: string };
@@ -15,6 +21,7 @@ export interface VendorProfile {
   status: "pending" | "approved" | "suspended";
   logo?: string;
   storeLogo?: string;
+  bankAccount?: BankAccount;
 }
 
 export interface VendorStats {
@@ -33,6 +40,7 @@ interface UpdateVendorPayload {
   cacNumber?: string;
   nafdacNumber?: string;
   logo?: string;
+  bankAccount?: Partial<BankAccount>;
 }
 
 export function useVendorProfile() {
@@ -75,6 +83,17 @@ export function useUpdateVendorProfile() {
     onError: (error: any) => {
       show(error?.response?.data?.message ?? "Update failed", "error");
     },
+  });
+}
+
+export function useVendorById(vendorId: string | undefined) {
+  return useQuery<VendorProfile>({
+    queryKey: ["vendor", "public", vendorId],
+    queryFn: async () => {
+      const { data } = await apiClient.get<VendorProfile>(`/vendors/${vendorId}`);
+      return data;
+    },
+    enabled: !!vendorId,
   });
 }
 
