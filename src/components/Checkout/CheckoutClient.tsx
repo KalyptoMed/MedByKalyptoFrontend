@@ -547,7 +547,9 @@ export default function CheckoutClient() {
               <div className="w-full space-y-4">
                 {evidencePreview ? (
                   <div className="relative">
-                    <img src={evidencePreview} alt="Receipt preview" className="w-full rounded-2xl object-contain max-h-64 border-2 border-[#004D4A]/20" />
+                    <div className="relative w-full h-64 rounded-2xl overflow-hidden border-2 border-[#004D4A]/20">
+                      <Image src={evidencePreview} alt="Receipt preview" fill unoptimized className="object-contain" />
+                    </div>
                     <button
                       onClick={() => { setEvidenceFile(null); setEvidencePreview(null); }}
                       className="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-red-50 transition"

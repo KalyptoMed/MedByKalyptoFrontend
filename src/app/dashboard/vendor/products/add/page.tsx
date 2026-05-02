@@ -27,6 +27,9 @@ export default function AddProductPage() {
   const router = useRouter();
   const { data: vendorProfile, isLoading: profileLoading } = useVendorProfile();
   const { mutate: createProduct, isPending, isSuccess } = useCreateProduct();
+  const { register, handleSubmit } = useForm<FormValues>({
+    defaultValues: { status: "draft" },
+  });
 
   if (profileLoading) {
     return <div className="flex items-center justify-center h-64"><span className="w-8 h-8 border-2 border-[#004D4A]/20 border-t-[#004D4A] rounded-full animate-spin" /></div>;
@@ -51,9 +54,6 @@ export default function AddProductPage() {
       </div>
     );
   }
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
-    defaultValues: { status: "draft" },
-  });
 
   const onSubmit = (data: FormValues) => {
     createProduct(

@@ -101,7 +101,7 @@ export default function CartDrawer() {
                 </motion.div>
               ) : (
                 <AnimatePresence>
-                  {validItems.map((item, index) => {
+                  {validItems.map((item) => {
                     const query = productQueries[items.indexOf(item)];
                     const isChecking = query?.isLoading;
                     const isOutOfStock =

@@ -19,7 +19,7 @@ export default function UserProfilePage() {
   const { data: profile, isLoading } = useMe();
   const { mutate: updateProfile, isPending, isSuccess } = useUpdateProfile();
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
+  const { register, handleSubmit, reset } = useForm<FormValues>();
 
   useEffect(() => {
     const source = profile ?? user;

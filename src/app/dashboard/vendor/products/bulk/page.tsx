@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, Download, Plus, Trash2, Save, CheckCircle, AlertCircle } from "lucide-react";
+import { Upload, Download, Plus, Trash2, Save, AlertCircle } from "lucide-react";
 import Papa from "papaparse";
 import { useMyProducts, useBulkUpdateProducts, useBulkDeleteProducts, type ApiProduct } from "@/hooks/product.hooks";
 
@@ -70,7 +70,7 @@ export default function BulkEditorPage() {
     setRows((prev) => [...prev, { id, name: "", category: "", price: "", comparePrice: "", stock: "", sku: "", status: "draft", _new: true, _dirty: true }]);
   };
 
-  const toggleSelect = (id: string) => setSelected((prev) => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
+  const toggleSelect = (id: string) => setSelected((prev) => { const n = new Set(prev); if (n.has(id)) { n.delete(id); } else { n.add(id); } return n; });
   const toggleAll = () => setSelected(selected.size === rows.length ? new Set() : new Set(rows.map((r) => r.id)));
 
   const handleDelete = () => {
@@ -92,7 +92,7 @@ export default function BulkEditorPage() {
   };
 
   const exportCSV = () => {
-    const csv = Papa.unparse(rows.map(({ id, _dirty, _new, ...rest }) => rest));
+    const csv = Papa.unparse(rows.map(({ id: _id, _dirty, _new, ...rest }) => rest));
     const blob = new Blob([csv], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a"); a.href = url; a.download = "products-bulk.csv"; a.click();
